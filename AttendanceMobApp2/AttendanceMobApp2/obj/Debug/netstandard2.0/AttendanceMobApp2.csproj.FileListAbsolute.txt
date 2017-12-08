@@ -1,0 +1,12 @@
+G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2\bin\Debug\netstandard2.0\AttendanceMobApp2.deps.json
+G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2\bin\Debug\netstandard2.0\AttendanceMobApp2.dll
+G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2\bin\Debug\netstandard2.0\AttendanceMobApp2.pdb
+G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.csprojResolveAssemblyReference.cache
+G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.csproj.CoreCompileInputs.cache
+G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.App.xaml.g.cs
+G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.AssemblyInfoInputs.cache
+G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.AssemblyInfo.cs
+G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.dll
+G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.pdb
+G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.View.MainPage.xaml.g.cs
+G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.View.AttendanceHistory.xaml.g.cs

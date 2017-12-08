@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AttendanceMobApp2"
+             x:Class="AttendanceMobApp2.MainPage">
+
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Slider x:Name="mySlider" Minimum="0" Maximum="100"></Slider>
+            <Label FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"
+                   BindingContext="{x:Reference mySlider}"
+                   Text="{Binding Value}"></Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label 
+                    
+                    Text="Hej" 
+                    HorizontalTextAlignment="End"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                <Label 
+                    Text="{Binding FullName}" 
+                    Grid.Row="0"
+                    Grid.Column="1"/>
+                <Label 
+                    Text="Du har kanske checkat in" 
+                    Grid.Row="1"
+                    Grid.Column="0"/>
+                
+                
+                <Label 
+                    Text="Senast incheckad" 
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"/>
+                
+                
+            </Grid>
+            <Button Text="Refresh check in" Clicked="Button_OnClickedCheckInRefresh"></Button>
+            
+            <Button Text="Attendance History " Clicked="Button_OnClickedAttHistory"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+    
+
+
+</ContentPage>
