@@ -11,8 +11,8 @@
 namespace AttendanceMobApp2.View {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2\\View\\Attendan" +
-        "ceHistory.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2\\View\\Atten" +
+        "danceHistory.xaml")]
     public partial class AttendanceHistory : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

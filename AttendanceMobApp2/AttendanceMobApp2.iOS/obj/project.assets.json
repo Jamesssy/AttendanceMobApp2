@@ -759,11 +759,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.iOS\\AttendanceMobApp2.iOS.csproj",
+      "projectUniqueName": "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2.iOS\\AttendanceMobApp2.iOS.csproj",
       "projectName": "AttendanceMobApp2.iOS",
-      "projectPath": "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.iOS\\AttendanceMobApp2.iOS.csproj",
+      "projectPath": "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2.iOS\\AttendanceMobApp2.iOS.csproj",
       "packagesPath": "C:\\Users\\JamesMonster\\.nuget\\packages\\",
-      "outputPath": "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.iOS\\obj\\",
+      "outputPath": "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -780,8 +780,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.csproj": {
-              "projectPath": "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.csproj"
+            "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.csproj": {
+              "projectPath": "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.csproj"
             }
           }
         }

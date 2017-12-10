@@ -8,6 +8,16 @@
             <Label Text="Attendance History!"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
+            <ListView
+                ItemsSource="{Binding HistoryOfAttendances}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding AttendanceDate}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+                
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

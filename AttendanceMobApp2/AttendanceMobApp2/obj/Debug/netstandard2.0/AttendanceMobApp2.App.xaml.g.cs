@@ -11,7 +11,7 @@
 namespace AttendanceMobApp2 {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2\\App.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2\\App.xaml")]
     public partial class App : global::Xamarin.Forms.Application {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

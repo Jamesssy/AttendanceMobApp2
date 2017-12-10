@@ -28,7 +28,40 @@ G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2.Android\obj\
 G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
-G:\Project VS\AttendanceMobApp2\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\AttendanceMobApp2.Android.dll
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\AttendanceMobApp2.Android.dll
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\AttendanceMobApp2.Android.pdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\com.companyname.AttendanceMobApp2.apk
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\com.companyname.AttendanceMobApp2-Signed.apk
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\AttendanceMobApp2.dll
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\AttendanceMobApp2.pdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\AttendanceMobApp2.Android.csprojResolveAssemblyReference.cache
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\AttendanceMobApp2.Android.csproj.CoreCompileInputs.cache
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\AttendanceMobApp2.Android.dll
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\AttendanceMobApp2.Android.pdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\bin\com.companyname.AttendanceMobApp2.apk
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable\icon.png
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable-hdpi\icon.png
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable-xhdpi\icon.png
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable-xxhdpi\icon.png
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\layout\tabbar.xml
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\layout\toolbar.xml
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\values\styles.xml
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable\icon1.png
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable\icon2.png
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable\icon3.png
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\R.cs.flag
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\uploadflags.txt
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\AttendanceMobApp2.Android.dll.mdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\FormsViewGroup.dll.mdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\Xamarin.Forms.Core.dll.mdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\Xamarin.Forms.Xaml.dll.mdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\AttendanceMobApp2.Android.dll.mdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\FormsViewGroup.dll.mdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\AttendanceMobApp2.Android.dll
 bin\Debug\FormsViewGroup.dll.mdb
 bin\Debug\Xamarin.Forms.Core.dll.mdb
 bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb

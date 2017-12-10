@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Xamarin.Forms;
 
 namespace AttendanceMobApp2.ViewModel
 {
@@ -21,6 +22,16 @@ namespace AttendanceMobApp2.ViewModel
             }
         }
 
+        private Command changeTextCommand;
+
+        public Command ChangeTextCommand
+        {
+            get { return changeTextCommand ?? (changeTextCommand = new Command(() =>
+            {
+                LabelText = "Goodbye";
+            })); }
+            
+        }
 
 
         public string FirstName { get; set; }

@@ -11,6 +11,20 @@
             <Label FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"
                    BindingContext="{x:Reference mySlider}"
                    Text="{Binding Value}"></Label>
+            
+            <Label Text="{Binding LabelText}"
+                   BackgroundColor="Blue"
+                   TextColor="White"></Label>
+            <Button Text="Click me!"
+                    BackgroundColor="Blue"
+                    TextColor="Yellow"
+                    Command="{Binding ChangeTextCommand}"></Button>
+            
+            <Image
+                Source="icon1.png"
+                Aspect="AspectFit"
+                WidthRequest="100"
+                HeightRequest="100"></Image>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>

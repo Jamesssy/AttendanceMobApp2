@@ -712,11 +712,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.Android\\AttendanceMobApp2.Android.csproj",
+      "projectUniqueName": "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2.Android\\AttendanceMobApp2.Android.csproj",
       "projectName": "AttendanceMobApp2.Android",
-      "projectPath": "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.Android\\AttendanceMobApp2.Android.csproj",
+      "projectPath": "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2.Android\\AttendanceMobApp2.Android.csproj",
       "packagesPath": "C:\\Users\\JamesMonster\\.nuget\\packages\\",
-      "outputPath": "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.Android\\obj\\",
+      "outputPath": "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -733,8 +733,8 @@
       "frameworks": {
         "monoandroid80": {
           "projectReferences": {
-            "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.csproj": {
-              "projectPath": "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.csproj"
+            "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.csproj": {
+              "projectPath": "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.csproj"
             }
           }
         }

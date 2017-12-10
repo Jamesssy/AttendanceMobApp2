@@ -390,11 +390,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.csproj",
+      "projectUniqueName": "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.csproj",
       "projectName": "AttendanceMobApp2",
-      "projectPath": "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.csproj",
+      "projectPath": "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2.csproj",
       "packagesPath": "C:\\Users\\JamesMonster\\.nuget\\packages\\",
-      "outputPath": "G:\\Project VS\\AttendanceMobApp2\\AttendanceMobApp2\\AttendanceMobApp2\\obj\\",
+      "outputPath": "G:\\Project VS\\AttendanceMobApp2Git\\AttendanceMobApp2\\AttendanceMobApp2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
