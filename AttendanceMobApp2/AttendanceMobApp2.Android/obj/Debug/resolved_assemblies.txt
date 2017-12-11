@@ -51,10 +51,11 @@ G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\o
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Web.Services.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Xml.XPath.XDocument.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.ComponentModel.dll
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Xml.ReaderWriter.dll
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Reflection.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Threading.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Collections.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Collections.Concurrent.dll
-G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Reflection.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Diagnostics.Debug.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Linq.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Runtime.InteropServices.dll
@@ -63,7 +64,6 @@ G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\o
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Threading.Tasks.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.ObjectModel.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Globalization.dll
-G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Xml.ReaderWriter.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Linq.Expressions.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.IO.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\System.Dynamic.Runtime.dll

@@ -5,14 +5,42 @@
     <ContentPage.Content>
         <StackLayout Padding="10
                      ">
-            <Label Text="Attendance History!"
+            <Label Text="Attendance History"
+                   FontAttributes="Bold"
+                   FontSize="Large"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
             <ListView
                 ItemsSource="{Binding HistoryOfAttendances}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding AttendanceDate}"></TextCell>
+                        <ViewCell>
+                            
+                                <ViewCell.View>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding ImageSource}"></Image>
+                                    <StackLayout Orientation="Vertical" Padding="0 0 10 0">
+                                    <Label Text="{Binding AttendanceDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}" HorizontalOptions="StartAndExpand" FontSize="15"
+                                       TextColor="DeepSkyBlue"
+                                       ></Label>
+                                    <Label Text="{Binding AttendanceDate, StringFormat='{0:dddd}'}"  VerticalOptions="End" FontSize="15"
+                                           TextColor="Gray"
+                                    ></Label>
+                                    </StackLayout>
+                                    <Button Text="Delete" CommandParameter="{Binding AttendanceDate}" Clicked="DeleteClicked">
+                                </Button>
+                                </StackLayout>
+
+                            </ViewCell.View>
+                        </ViewCell>
+                        
+                        <!--<ImageCell Text="{Binding AttendanceDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}"
+                                   Detail="{Binding AttendanceDate, StringFormat='{0:dddd}'}"
+                             ImageSource="{Binding ImageSource}"  
+                                   TextColor="DeepSkyBlue"
+                                   DetailColor="Gray"></ImageCell>-->
+
+                        
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 

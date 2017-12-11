@@ -17,5 +17,10 @@ namespace AttendanceMobApp2.View
 			InitializeComponent ();
 		    BindingContext = new AttendanceHistoryViewModel();
 		}
+
+	    private void DeleteClicked(object sender, EventArgs e)
+	    {
+	        throw new NotImplementedException();
+	    }
 	}
 }

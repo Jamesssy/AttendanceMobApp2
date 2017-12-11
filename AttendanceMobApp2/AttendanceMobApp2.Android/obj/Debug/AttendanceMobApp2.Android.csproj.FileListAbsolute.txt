@@ -49,6 +49,8 @@ G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\o
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable\icon1.png
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable\icon2.png
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable\icon3.png
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable\ok1.jpg
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable\ok3.jpg
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\R.cs.flag
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\uploadflags.txt
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\AttendanceMobApp2.Android.dll.mdb
@@ -61,6 +63,7 @@ G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\o
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\obj\Debug\res\drawable\ok4.jpg
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2.Android\bin\Debug\AttendanceMobApp2.Android.dll
 bin\Debug\FormsViewGroup.dll.mdb
 bin\Debug\Xamarin.Forms.Core.dll.mdb

@@ -9,5 +9,7 @@ namespace AttendanceMobApp2.Model
         public int Id { get; set; }
 
         public DateTime AttendanceDate { get; set; }
+
+        public string ImageSource { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace AttendanceMobApp2.ViewModel
         public ObservableCollection<Attendance> HistoryOfAttendances { get; set; } = 
             new ObservableCollection<Attendance>();
 
+
         public AttendanceHistoryViewModel()
         {
             var date = DateTime.Now;
@@ -19,12 +20,14 @@ namespace AttendanceMobApp2.ViewModel
             {
                 Attendance attendance = new Attendance();
                 attendance.AttendanceDate = date;
-                
+                attendance.ImageSource = "ok4.jpg";
                 HistoryOfAttendances.Add(attendance);
                 date = date.AddDays(1.0);
 
 
             }
+
+           
         }
 
     }
