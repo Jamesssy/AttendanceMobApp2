@@ -19,6 +19,7 @@ namespace AttendanceMobApp2
 			InitializeComponent();
             vm = new MainPageViewModel();
 		    BindingContext = vm;
+            
 		}
 
 	    private void Button_OnClickedAttHistory(object sender, EventArgs e)
@@ -34,7 +35,8 @@ namespace AttendanceMobApp2
 	    private void Button_OnClickedCheckIn(object sender, EventArgs e)
 	    {
 	        vm.AddToAttendance();
-	        Navigation.PushAsync(new MainPage());
+            vm.CheckIfCheckedInString();
+            //Navigation.PushAsync(new MainPage());
 
         }
 
