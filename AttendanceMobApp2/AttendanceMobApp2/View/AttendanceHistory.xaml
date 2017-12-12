@@ -3,37 +3,74 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AttendanceMobApp2.View.AttendanceHistory">
     <ContentPage.Content>
-        <StackLayout Padding="10
-                     ">
+        <StackLayout Padding="10" VerticalOptions="FillAndExpand">
             <Label Text="Attendance History"
                    FontAttributes="Bold"
                    FontSize="Large"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
-            <ListView
-                ItemsSource="{Binding HistoryOfAttendances}">
+
+            <ListView HasUnevenRows = "true"
+                ItemsSource="{Binding HistoryOfAttendances}"
+                      ItemSelected="ListView_OnItemSelected"
+                      >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            
-                                <ViewCell.View>
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding ImageSource}"></Image>
-                                    <StackLayout Orientation="Vertical" Padding="0 0 10 0">
-                                    <Label Text="{Binding AttendanceDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}" HorizontalOptions="StartAndExpand" FontSize="15"
-                                       TextColor="DeepSkyBlue"
-                                       ></Label>
-                                    <Label Text="{Binding AttendanceDate, StringFormat='{0:dddd}'}"  VerticalOptions="End" FontSize="15"
-                                           TextColor="Gray"
-                                    ></Label>
-                                    </StackLayout>
-                                    <Button Text="Delete" CommandParameter="{Binding AttendanceDate}" Clicked="DeleteClicked">
-                                </Button>
-                                </StackLayout>
+                            <ContentView>
+                                <StackLayout Padding="10,0,5,0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="65"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                   <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="40"></ColumnDefinition>
 
-                            </ViewCell.View>
+                                </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="15"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="15"></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                            <Image Source="{Binding ImageSource}"
+                                   MinimumHeightRequest="50"
+                                            Grid.Row="0"
+                                            Grid.RowSpan="4"
+                                            />
+                                        <Label Text="{Binding AttendanceDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}"  FontSize="15" VerticalTextAlignment="Center"
+                                               TextColor="DeepSkyBlue"
+                                               FontAttributes="Bold"
+                                            Grid.Row="1"
+                                               
+                                            Grid.Column="1"/>
+                                        <Label Text="{Binding AttendanceDate, StringFormat='{0:dddd}'}"  FontSize="16" VerticalTextAlignment="Start"
+                                               TextColor="Gray"
+                                            Grid.Row="2"
+                                            Grid.Column="1"/>
+
+
+                            <Button Text="X" CommandParameter="{Binding AttendanceDate}" Clicked="DeleteClicked"
+                                    BackgroundColor="Black"
+                                    TextColor="DeepSkyBlue"
+                                    
+                                    
+                                    
+                                            Grid.Row="1"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="3"
+                                            />
+
+
+                                    </Grid>
+
+
+                                </StackLayout>
+                            </ContentView>
                         </ViewCell>
-                        
+
+
                         <!--<ImageCell Text="{Binding AttendanceDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}"
                                    Detail="{Binding AttendanceDate, StringFormat='{0:dddd}'}"
                              ImageSource="{Binding ImageSource}"  
@@ -49,3 +86,54 @@
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+
+
+
+
+
+
+
+<!--<StackLayout Padding="10" VerticalOptions="FillAndExpand">
+    <Label Text="Attendance History"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+
+    <ListView
+                ItemsSource="{Binding HistoryOfAttendances}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+
+                    <ViewCell.View>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding ImageSource}"></Image>
+                            <StackLayout Orientation="Vertical"  Padding="0,0,30,0" >
+                                <Label Text="{Binding AttendanceDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}" HorizontalOptions="StartAndExpand" FontSize="15" VerticalTextAlignment="End"
+                                       TextColor="DeepSkyBlue"
+                                       ></Label>
+                                <Label Text="{Binding AttendanceDate, StringFormat='{0:dddd}'}" VerticalOptions="EndAndExpand" FontSize="16" VerticalTextAlignment="Start"
+                                           TextColor="Gray"
+                                    ></Label>
+                            </StackLayout>
+                            <Button Text="Delete" CommandParameter="{Binding AttendanceDate}" Clicked="DeleteClicked">
+                            </Button>
+                        </StackLayout>
+
+                    </ViewCell.View>
+                </ViewCell>
+
+                --><!--<ImageCell Text="{Binding AttendanceDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}"
+                                   Detail="{Binding AttendanceDate, StringFormat='{0:dddd}'}"
+                             ImageSource="{Binding ImageSource}"  
+                                   TextColor="DeepSkyBlue"
+                                   DetailColor="Gray"></ImageCell>--><!--
+
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+
+    </ListView>
+</StackLayout>-->

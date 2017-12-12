@@ -2,22 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using AttendanceMobApp2.Model;
+using AttendanceMobApp2.View;
 using Xamarin.Forms;
 
 namespace AttendanceMobApp2
 {
 	public partial class App : Application
 	{
-		public App ()
+	    
+        public App ()
 		{
-			InitializeComponent();
+		    
 
-			MainPage = new NavigationPage(new AttendanceMobApp2.MainPage());
+            InitializeComponent();
+		    
+			MainPage = new NavigationPage(new RegistrationPage());
 		}
 
 		protected override void OnStart ()
 		{
+		    
 			// Handle when your app starts
 		}
 

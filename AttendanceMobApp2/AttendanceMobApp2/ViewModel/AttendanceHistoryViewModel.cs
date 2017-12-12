@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -11,24 +12,36 @@ namespace AttendanceMobApp2.ViewModel
         public ObservableCollection<Attendance> HistoryOfAttendances { get; set; } = 
             new ObservableCollection<Attendance>();
 
+        
 
         public AttendanceHistoryViewModel()
         {
-            var date = DateTime.Now;
+            var date = DateTime.Now.AddDays(-1);
+            Attendance attendance = new Attendance();
+            attendance.AttendanceDate = date;
+            attendance.ImageSource = "ok4.jpg";
+            HistoryOfAttendances.Add(attendance);
 
-            for (int i = 0; i < 5; i++)
+            foreach (var item in Attendance.Attendances)
             {
-                Attendance attendance = new Attendance();
-                attendance.AttendanceDate = date;
-                attendance.ImageSource = "ok4.jpg";
-                HistoryOfAttendances.Add(attendance);
-                date = date.AddDays(1.0);
-
-
+                HistoryOfAttendances.Add(item);
+                
             }
+
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Attendance attendance = new Attendance();
+            //    attendance.AttendanceDate = date;
+            //    attendance.ImageSource = "ok4.jpg";
+            //    HistoryOfAttendances.Add(attendance);
+            //    date = date.AddDays(1.0);
+
+
+            //}
 
            
         }
 
+       
     }
 }

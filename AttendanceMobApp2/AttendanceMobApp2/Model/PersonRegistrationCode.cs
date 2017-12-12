@@ -13,5 +13,7 @@ namespace AttendanceMobApp2.Model
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
+
+        public static List<PersonRegistrationCode> Codes = new List<PersonRegistrationCode>();
     }
 }

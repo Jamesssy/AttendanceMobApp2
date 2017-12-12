@@ -3010,12 +3010,13 @@ containing a value of this type.
         public static int notification_bg_normal=0x7f02010a;
         public static int notification_bg_normal_pressed=0x7f02010b;
         public static int notification_icon_background=0x7f02010c;
-        public static int notification_template_icon_bg=0x7f020111;
-        public static int notification_template_icon_low_bg=0x7f020112;
+        public static int notification_template_icon_bg=0x7f020112;
+        public static int notification_template_icon_low_bg=0x7f020113;
         public static int notification_tile_bg=0x7f02010d;
         public static int notify_panel_notification_icon_bg=0x7f02010e;
         public static int ok1=0x7f02010f;
         public static int ok3=0x7f020110;
+        public static int ok4=0x7f020111;
     }
     public static final class id {
         public static int action0=0x7f08009e;

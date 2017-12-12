@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:service="clr-namespace:AttendanceMobApp2.Service;assembly=AttendanceMobApp2"
+             x:Class="AttendanceMobApp2.View.RegistrationPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Welcome to KBry's Attendance App!"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+            <Label Text="Please enter your registration code sent via email!"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Enter your registration code!"
+                   x:Name="RegistrationCodeEntry"
+                   Text="{Binding RegistrationCode}">
+                <!--<Entry.Behaviors>
+                <service:ValidationBehaviorEntry/>
+                </Entry.Behaviors>--> 
+                </Entry>
+            <Button Text="Register this device"
+                    Clicked="Button_OnClickedAddRegistration"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

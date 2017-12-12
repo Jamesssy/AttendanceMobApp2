@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AttendanceMobApp2.Model;
 using AttendanceMobApp2.View;
 using AttendanceMobApp2.ViewModel;
 using Xamarin.Forms;
@@ -11,7 +12,8 @@ namespace AttendanceMobApp2
 {
 	public partial class MainPage : ContentPage
 	{
-	    private MainPageViewModel vm;
+	    
+        private MainPageViewModel vm;
 		public MainPage()
 		{
 			InitializeComponent();
@@ -28,5 +30,14 @@ namespace AttendanceMobApp2
 	    {
 	        throw new NotImplementedException();
 	    }
-	}
+
+	    private void Button_OnClickedCheckIn(object sender, EventArgs e)
+	    {
+	        vm.AddToAttendance();
+	        Navigation.PushAsync(new MainPage());
+
+        }
+
+	   
+    }
 }

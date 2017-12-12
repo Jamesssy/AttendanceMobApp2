@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using AttendanceMobApp2.Model;
 using Xamarin.Forms;
 
 namespace AttendanceMobApp2.ViewModel
@@ -58,6 +59,15 @@ namespace AttendanceMobApp2.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
 
+        }
+
+        public void AddToAttendance()
+        {
+            
+            Attendance attendance = new Attendance();
+            attendance.AttendanceDate = DateTime.Now;
+            attendance.ImageSource = "ok4.jpg";
+            Attendance.Attendances.Add(attendance);
         }
     }
 }

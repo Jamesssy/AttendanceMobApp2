@@ -22,3 +22,4 @@ G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2\obj\Debug
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.dll
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.pdb
 G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.csprojResolveAssemblyReference.cache
+G:\Project VS\AttendanceMobApp2Git\AttendanceMobApp2\AttendanceMobApp2\obj\Debug\netstandard2.0\AttendanceMobApp2.View.RegistrationPage.xaml.g.cs

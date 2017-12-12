@@ -60,6 +60,7 @@
                 
                 
             </Grid>
+            <Button Text="Check in" Clicked="Button_OnClickedCheckIn"></Button>
             <Button Text="Refresh check in" Clicked="Button_OnClickedCheckInRefresh"></Button>
             
             <Button Text="Attendance History " Clicked="Button_OnClickedAttHistory"></Button>
