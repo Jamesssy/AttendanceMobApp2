@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using AttendanceMobApp2.Data;
 
 namespace AttendanceMobApp2.Model
 {
-    public class Attendance
+    public class Attendance : IEntity
     {
         public int Id { get; set; }
 

@@ -109,6 +109,7 @@ class MonoPackageManager_Resources {
 		"AttendanceMobApp2.Android.dll",
 		"AttendanceMobApp2.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Annotations.dll",
 		"Xamarin.Android.Support.Compat.dll",
