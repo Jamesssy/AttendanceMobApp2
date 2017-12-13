@@ -49,7 +49,7 @@
                                 <StackLayout Padding="10,0,5,0">-->
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="1.2*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     
@@ -57,9 +57,11 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
-                    <RowDefinition Height="100"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <!--<Label 
                     
@@ -73,27 +75,59 @@
                     Grid.Column="1"/>-->
                 <Label 
                     Text="{Binding CheckedInString}" 
-                    Grid.Row="1"
-                    Grid.ColumnSpan="2"
-                    Grid.Column="0"/>
+                    HorizontalTextAlignment="Center"
+                    Grid.Row="0" Grid.Column="0"
+                    Grid.RowSpan="2"
+                    VerticalTextAlignment="Center"
+                    Grid.ColumnSpan="3" />
+                    
 
-                <Image Source="{Binding ImageSource}"
-                       
-                       Grid.Row="1"
-                       Grid.Column="2"
+                <Image Source="{Binding CheckedInImage}"
+                       HeightRequest="60"
+                       WidthRequest="60"
+                       Grid.Row="2"
+                       Grid.Column="1"
                         />
                 
                 
                 <Label 
-                    Text="Senast incheckad" 
-                    Grid.Row="3"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"/>
-
-                <Label 
-                    Text="{Binding LastCheckIn}" 
+                    Text="Senast incheckad:" 
+                    HorizontalTextAlignment="Center"
+                    FontAttributes="Bold"
                     Grid.Row="4"
                     Grid.Column="0"
+                    Grid.ColumnSpan="3"/>
+
+                <Label 
+                    Text="{Binding LastCheckedIn, StringFormat='{0:dddd, d MMMM yyyy}'}" 
+                    HorizontalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="DeepSkyBlue"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"/>
+                <Label 
+                    Text="Dagens datum:" 
+                    HorizontalTextAlignment="End"
+                    FontAttributes="Bold"
+                    FontSize="15"
+                    VerticalTextAlignment="Center"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="1"
+                    
+                    />
+                <Label 
+                    
+                    Text="{Binding TodaysDate, StringFormat='{0:dddd, d MMMM yyyy}'}"
+                    FontAttributes="Bold"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Start"
+                    FontSize="15"
+                    
+                    Grid.Row="6"
+                    Grid.Column="1"
                     Grid.ColumnSpan="2"/>
 
             </Grid>
@@ -107,6 +141,7 @@
             </ListView>-->
 
             <Button Text="Check in" Clicked="Button_OnClickedCheckIn" Command="{Binding ChangeTextCheckInCommand}"></Button>
+            
             <Button Text="Refresh check in" Clicked="Button_OnClickedCheckInRefresh"></Button>
             
             <Button Text="Attendance History " Clicked="Button_OnClickedAttHistory"></Button>

@@ -3010,13 +3010,16 @@ containing a value of this type.
         public static final int notification_bg_normal=0x7f02010a;
         public static final int notification_bg_normal_pressed=0x7f02010b;
         public static final int notification_icon_background=0x7f02010c;
-        public static final int notification_template_icon_bg=0x7f020112;
-        public static final int notification_template_icon_low_bg=0x7f020113;
+        public static final int notification_template_icon_bg=0x7f020115;
+        public static final int notification_template_icon_low_bg=0x7f020116;
         public static final int notification_tile_bg=0x7f02010d;
         public static final int notify_panel_notification_icon_bg=0x7f02010e;
-        public static final int ok1=0x7f02010f;
-        public static final int ok3=0x7f020110;
-        public static final int ok4=0x7f020111;
+        public static final int notok2=0x7f02010f;
+        public static final int notok4=0x7f020110;
+        public static final int notok6=0x7f020111;
+        public static final int ok1=0x7f020112;
+        public static final int ok3=0x7f020113;
+        public static final int ok4=0x7f020114;
     }
     public static final class id {
         public static final int action0=0x7f08009e;

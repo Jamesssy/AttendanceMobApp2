@@ -36,9 +36,11 @@ namespace AttendanceMobApp2
 	    {
 	        vm.AddToAttendance();
             vm.CheckIfCheckedInString();
-            //Navigation.PushAsync(new MainPage());
+	        vm.CheckIfCheckedInImage();
+            vm.CheckLastCheckedIn();
+	        //Navigation.PushAsync(new MainPage());
 
-        }
+	    }
 
 	   
     }

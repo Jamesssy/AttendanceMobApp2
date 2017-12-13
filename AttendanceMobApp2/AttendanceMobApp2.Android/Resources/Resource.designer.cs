@@ -2747,11 +2747,11 @@ namespace AttendanceMobApp2.Droid
 			// aapt resource value: 0x7f02010c
 			public const int notification_icon_background = 2130837772;
 			
-			// aapt resource value: 0x7f020112
-			public const int notification_template_icon_bg = 2130837778;
+			// aapt resource value: 0x7f020115
+			public const int notification_template_icon_bg = 2130837781;
 			
-			// aapt resource value: 0x7f020113
-			public const int notification_template_icon_low_bg = 2130837779;
+			// aapt resource value: 0x7f020116
+			public const int notification_template_icon_low_bg = 2130837782;
 			
 			// aapt resource value: 0x7f02010d
 			public const int notification_tile_bg = 2130837773;
@@ -2760,13 +2760,22 @@ namespace AttendanceMobApp2.Droid
 			public const int notify_panel_notification_icon_bg = 2130837774;
 			
 			// aapt resource value: 0x7f02010f
-			public const int ok1 = 2130837775;
+			public const int NotOk2 = 2130837775;
 			
 			// aapt resource value: 0x7f020110
-			public const int ok3 = 2130837776;
+			public const int NotOk4 = 2130837776;
 			
 			// aapt resource value: 0x7f020111
-			public const int ok4 = 2130837777;
+			public const int NotOk6 = 2130837777;
+			
+			// aapt resource value: 0x7f020112
+			public const int ok1 = 2130837778;
+			
+			// aapt resource value: 0x7f020113
+			public const int ok3 = 2130837779;
+			
+			// aapt resource value: 0x7f020114
+			public const int ok4 = 2130837780;
 			
 			static Drawable()
 			{

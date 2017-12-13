@@ -5,13 +5,46 @@
              x:Class="AttendanceMobApp2.View.RegistrationPage">
     <ContentPage.Content>
         <StackLayout Padding="20">
+            <Image
+                Source="icon1.png"
+                Aspect="AspectFill"
+                WidthRequest="150"
+                HeightRequest="150"></Image>
             <Label Text="Welcome to KBry's Attendance App!"
-                   VerticalOptions="CenterAndExpand" 
+                   FontAttributes="Bold"
+                  
                    HorizontalOptions="CenterAndExpand" />
-            <Label Text="Please enter your registration code sent via email!"
-                   VerticalOptions="CenterAndExpand" 
+            <Label Text=" "
+                   HorizontalOptions="CenterAndExpand" />
+            
+            <Label Text="This app will (should?) automatically register what"
+                   FontAttributes="Italic"
+                   HorizontalOptions="CenterAndExpand" />
+            
+            <Label Text=" days you decide to show up."
+                   HorizontalOptions="CenterAndExpand" 
+                   FontAttributes="Italic"/>
+            
+            <Label Text="If your gone for more then 2 weeks we will presume"
+                   HorizontalOptions="CenterAndExpand" 
+                   FontAttributes="Italic"/>
+            
+            <Label Text="your dead and will clean your locker and make $$$"
+                   HorizontalOptions="CenterAndExpand" 
+                   FontAttributes="Italic"/>
+            
+            <Label Text="Enter your registration code sent via e-mail!"
+                   VerticalOptions="EndAndExpand"
+                   FontAttributes="Bold"
+                   
+                   HorizontalOptions="CenterAndExpand" />
+            <Label Text="If you didn't get one... take the hint!"
+                   
+                   HorizontalOptions="CenterAndExpand" />
+            <Label Text=" "
                    HorizontalOptions="CenterAndExpand" />
             <Entry Placeholder="Enter your registration code!"
+                   
                    x:Name="RegistrationCodeEntry"
                    Text="{Binding RegistrationCode}">
                 <!--<Entry.Behaviors>
@@ -23,3 +56,5 @@
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+
+<!--VerticalOptions="CenterAndExpand"--> 

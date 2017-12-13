@@ -11,14 +11,14 @@
                 HorizontalOptions="CenterAndExpand" />
 
             <ListView HasUnevenRows = "true"
-                ItemsSource="{Binding HistoryOfAttendances}"
-                      ItemSelected="ListView_OnItemSelected"
-                      >
+                ItemsSource="{Binding HistoryOfAttendances}">
+                      <!--ItemSelected="ListView_OnItemSelected"-->
+                      
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ContentView>
-                                <StackLayout Padding="10,0,5,0">
+                                <StackLayout Padding="0,1,5,1">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="65"></ColumnDefinition>
@@ -28,18 +28,19 @@
 
                                 </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="15"></RowDefinition>
+                                            <RowDefinition Height="1"></RowDefinition>
                                             <RowDefinition Height="Auto"></RowDefinition>
                                             <RowDefinition Height="Auto"></RowDefinition>
-                                            <RowDefinition Height="15"></RowDefinition>
+                                            <RowDefinition Height="1"></RowDefinition>
 
                                 </Grid.RowDefinitions>
-                            <Image Source="{Binding ImageSource}"
+                                 <Image Source="{Binding ImageSource}"
                                    MinimumHeightRequest="50"
-                                            Grid.Row="0"
-                                            Grid.RowSpan="4"
+                                            Grid.Row="1"
+                                            Grid.RowSpan="2"
                                             />
-                                        <Label Text="{Binding AttendanceDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}"  FontSize="15" VerticalTextAlignment="Center"
+                                        <StackLayout Grid.Row="1" Grid.Column="1">
+                                        <Label Text="{Binding AttendanceDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}"  FontSize="15" VerticalTextAlignment="End"
                                                TextColor="DeepSkyBlue"
                                                FontAttributes="Bold"
                                             Grid.Row="1"
@@ -49,17 +50,14 @@
                                                TextColor="Gray"
                                             Grid.Row="2"
                                             Grid.Column="1"/>
+                                        </StackLayout>
 
-
-                            <Button Text="X" CommandParameter="{Binding AttendanceDate}" Clicked="DeleteClicked"
+                                        <Button Text="X" CommandParameter="{Binding AttendanceDate}" Clicked="DeleteClicked"
                                     BackgroundColor="Black"
                                     TextColor="DeepSkyBlue"
-                                    
-                                    
-                                    
-                                            Grid.Row="1"
-                                            Grid.RowSpan="2"
-                                            Grid.Column="3"
+                                    Grid.Row="1"
+                                                Grid.RowSpan="2"
+                                    Grid.Column="3"
                                             />
 
 

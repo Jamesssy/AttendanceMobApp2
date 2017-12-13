@@ -19,6 +19,8 @@ namespace AttendanceMobApp2.ViewModel
             FirstName = "James";
             LastName = "Johansson";
             CheckIfCheckedInString();
+            CheckIfCheckedInImage();
+            CheckLastCheckedIn();
         }
 
 
@@ -84,7 +86,7 @@ namespace AttendanceMobApp2.ViewModel
             Attendance.Attendances.Add(attendance);
         }
 
-        private string checkedInString = "Du har inte ännu checkat in idag!";
+        private string checkedInString = "Du har INTE checkat in idag!";
 
         public string CheckedInString
         {
@@ -96,6 +98,30 @@ namespace AttendanceMobApp2.ViewModel
             }
         }
 
+        private string checkedInImage = "NotOk6.jpg";
+
+        public string CheckedInImage
+        {
+            get { return checkedInImage; }
+            set
+            {
+                checkedInImage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public void CheckIfCheckedInImage()
+        {
+            var date = Attendance.Attendances.Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
+
+            if (date)
+            {
+
+                CheckedInImage = "ok4.jpg";
+            }
+
+
+        }
 
         public void CheckIfCheckedInString()
         {
@@ -109,6 +135,43 @@ namespace AttendanceMobApp2.ViewModel
 
             
         }
+
+        private DateTime lastCheckedIn;
+
+        public DateTime LastCheckedIn
+        {
+            get { return lastCheckedIn; }
+            set
+            {
+                lastCheckedIn = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public DateTime TodaysDate
+        {
+            get
+            {
+                return DateTime.Now;
+            }
+            
+        }
+
+        public void CheckLastCheckedIn()
+        {
+            var date = Attendance.Attendances.Select(x => x.AttendanceDate.Date).LastOrDefault();
+
+            
+
+                LastCheckedIn = date;
+            
+
+
+        }
+
+
+
+
 
         //private Command changeTextCheckInCommand;
 
