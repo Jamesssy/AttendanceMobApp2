@@ -14,10 +14,10 @@ namespace AttendanceMobApp2
 {
 	public partial class MainPage : ContentPage
 	{
-	    //private List<Attendance> attendances { get; set; } =
-	    //    new List<Attendance>();
+        private List<Attendance> attendances { get; set; } =
+            new List<Attendance>();
 
-	    //private static int ids = 0;
+        //private static int ids = 0;
 
         private MainPageViewModel vm;
 		public MainPage()
@@ -40,26 +40,40 @@ namespace AttendanceMobApp2
 
 	    private void Button_OnClickedCheckIn(object sender, EventArgs e)
 	    {
-	        vm.AddToAttendance();
+	        GetAllAttendancesToList();
+
+            AddToAttendanceList();
             vm.CheckIfCheckedInString();
 	        vm.CheckIfCheckedInImage();
             vm.CheckLastCheckedIn();
 	        //Navigation.PushAsync(new MainPage());
 
 	    }
-        //public void AddToAttendance()
-        //{
+        public void AddToAttendanceList()
+        {
 
-        //    Attendance attendance = new Attendance();
-        //    attendance.AttendanceDate = DateTime.Now;
-        //    attendance.ImageSource = "ok4.jpg";
-        //    attendance.Id = ids++;
-        //    Attendance.Attendances.Add(attendance);
-        //    attendances.Add(attendance);
-        //    var repo = new AttendanceRepository();
-        //    repo.Save(attendances);
+            Attendance attendance = new Attendance();
+            attendance.AttendanceDate = DateTime.Now;
+            attendance.ImageSource = "ok4.jpg";
+            //attendance.Id = ids++;
+            Attendance.Attendances.Add(attendance);
+            attendances.Add(attendance);
+            var repo = new AttendanceRepository();
+            repo.Save(attendances);
 
-        //}
+        }
+
+	    public void GetAllAttendancesToList()
+	    {
+	        var repo = new AttendanceRepository();
+	        var Attendances = repo.GetAll();
+	        foreach (var attendance in Attendances)
+	        {
+	            attendances.Add(attendance);
+	        }
+	    }
+
+	   
 
 
     }

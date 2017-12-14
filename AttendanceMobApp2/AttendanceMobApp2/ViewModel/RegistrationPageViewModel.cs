@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using AttendanceMobApp2.Data;
 using AttendanceMobApp2.Model;
 
 namespace AttendanceMobApp2.ViewModel
@@ -14,6 +15,10 @@ namespace AttendanceMobApp2.ViewModel
             PersonRegistrationCode regCode = new PersonRegistrationCode();
             regCode.RegistrationString = RegistrationCode;
             PersonRegistrationCode.Codes.Add(regCode);
+            var repo = new RegistrationCodeRepository();
+            repo.Save(regCode);
+
+
         }
     }
 }

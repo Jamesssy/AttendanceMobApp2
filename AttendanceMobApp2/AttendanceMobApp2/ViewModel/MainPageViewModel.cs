@@ -79,19 +79,19 @@ namespace AttendanceMobApp2.ViewModel
         }
         //private static int ids = 0;
 
-        public void AddToAttendance()
-        {
+        //public void AddToAttendance()
+        //{
 
-            Attendance attendance = new Attendance();
-            attendance.AttendanceDate = DateTime.Now;
-            attendance.ImageSource = "ok4.jpg";
-            //attendance.Id = ids++;
-            Attendance.Attendances.Add(attendance);
+        //    Attendance attendance = new Attendance();
+        //    attendance.AttendanceDate = DateTime.Now;
+        //    attendance.ImageSource = "ok4.jpg";
+        //    //attendance.Id = ids++;
+        //    Attendance.Attendances.Add(attendance);
            
-            var repo = new AttendanceRepository();
-            repo.Save(attendance);
+        //    var repo = new AttendanceRepository();
+        //    repo.Save(attendance);
 
-        }
+        //}
 
         private string checkedInString = "Du har INTE checkat in idag!";
 
