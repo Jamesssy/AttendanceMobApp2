@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AttendanceMobApp2.Data;
 using AttendanceMobApp2.Model;
 using AttendanceMobApp2.ViewModel;
 using Xamarin.Forms;
@@ -13,10 +15,18 @@ namespace AttendanceMobApp2.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AttendanceHistory : ContentPage
 	{
-		public AttendanceHistory ()
+	    public ObservableCollection<Attendance> HistoryOfAttendances { get; set; } =
+	        new ObservableCollection<Attendance>();
+
+        public AttendanceHistory ()
 		{
-			InitializeComponent ();
-		    BindingContext = new AttendanceHistoryViewModel();
+            //foreach (var item in attendance)
+            //{
+            //    HistoryOfAttendances.Add(item);
+		    //      }
+		    GetAllAttendances();
+            InitializeComponent ();
+		    BindingContext = this;
 		}
 
 	    private void DeleteClicked(object sender, EventArgs e)
@@ -35,5 +45,16 @@ namespace AttendanceMobApp2.View
 	        DisplayAlert("Selected", attendance.AttendanceDate.ToString() , "OK");
 
 	    }
+
+	    public void GetAllAttendances()
+	    {
+	        var repo = new AttendanceRepository();
+	        var attendances = repo.GetAll();
+	        foreach (var attendance in attendances)
+	        {
+	            HistoryOfAttendances.Add(attendance);
+	        }
+	    }
+
 	}
 }

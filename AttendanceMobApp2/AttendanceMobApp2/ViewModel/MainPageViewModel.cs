@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using AttendanceMobApp2.Data;
 using AttendanceMobApp2.Model;
 using AttendanceMobApp2.View;
 using Xamarin.Forms;
@@ -76,14 +77,20 @@ namespace AttendanceMobApp2.ViewModel
 
 
         }
+        //private static int ids = 0;
 
         public void AddToAttendance()
         {
-            
+
             Attendance attendance = new Attendance();
             attendance.AttendanceDate = DateTime.Now;
             attendance.ImageSource = "ok4.jpg";
+            //attendance.Id = ids++;
             Attendance.Attendances.Add(attendance);
+           
+            var repo = new AttendanceRepository();
+            repo.Save(attendance);
+
         }
 
         private string checkedInString = "Du har INTE checkat in idag!";

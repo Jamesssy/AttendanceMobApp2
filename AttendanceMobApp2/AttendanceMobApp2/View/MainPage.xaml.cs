@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AttendanceMobApp2.Data;
 using AttendanceMobApp2.Model;
 using AttendanceMobApp2.View;
 using AttendanceMobApp2.ViewModel;
@@ -12,7 +14,11 @@ namespace AttendanceMobApp2
 {
 	public partial class MainPage : ContentPage
 	{
-	    
+	    //private List<Attendance> attendances { get; set; } =
+	    //    new List<Attendance>();
+
+	    //private static int ids = 0;
+
         private MainPageViewModel vm;
 		public MainPage()
 		{
@@ -24,7 +30,7 @@ namespace AttendanceMobApp2
 
 	    private void Button_OnClickedAttHistory(object sender, EventArgs e)
 	    {
-	        Navigation.PushAsync(new AttendanceHistory());
+	        Navigation.PushAsync(new AttendanceHistory(), true);
 	    }
 
 	    private void Button_OnClickedCheckInRefresh(object sender, EventArgs e)
@@ -41,7 +47,20 @@ namespace AttendanceMobApp2
 	        //Navigation.PushAsync(new MainPage());
 
 	    }
+        //public void AddToAttendance()
+        //{
 
-	   
+        //    Attendance attendance = new Attendance();
+        //    attendance.AttendanceDate = DateTime.Now;
+        //    attendance.ImageSource = "ok4.jpg";
+        //    attendance.Id = ids++;
+        //    Attendance.Attendances.Add(attendance);
+        //    attendances.Add(attendance);
+        //    var repo = new AttendanceRepository();
+        //    repo.Save(attendances);
+
+        //}
+
+
     }
 }

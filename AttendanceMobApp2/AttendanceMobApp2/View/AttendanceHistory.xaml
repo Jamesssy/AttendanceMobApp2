@@ -3,20 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AttendanceMobApp2.View.AttendanceHistory">
     <ContentPage.Content>
+        
         <StackLayout Padding="10" VerticalOptions="FillAndExpand">
             <Label Text="Attendance History"
                    FontAttributes="Bold"
                    FontSize="Large"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
-
+<ScrollView>
             <ListView HasUnevenRows = "true"
                 ItemsSource="{Binding HistoryOfAttendances}">
                       <!--ItemSelected="ListView_OnItemSelected"-->
                       
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
+                        <!--<ViewCell>
                             <ContentView>
                                 <StackLayout Padding="0,1,5,1">
                                     <Grid>
@@ -66,14 +67,14 @@
 
                                 </StackLayout>
                             </ContentView>
-                        </ViewCell>
+                        </ViewCell>-->
 
 
-                        <!--<ImageCell Text="{Binding AttendanceDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}"
+                        <ImageCell Text="{Binding AttendanceDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}"
                                    Detail="{Binding AttendanceDate, StringFormat='{0:dddd}'}"
                              ImageSource="{Binding ImageSource}"  
                                    TextColor="DeepSkyBlue"
-                                   DetailColor="Gray"></ImageCell>-->
+                                   DetailColor="Gray"></ImageCell>
 
                         
                     </DataTemplate>
@@ -81,6 +82,7 @@
                 
                 
             </ListView>
+</ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
