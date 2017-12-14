@@ -24,12 +24,22 @@ namespace AttendanceMobApp2.View
             //{
             //    HistoryOfAttendances.Add(item);
 		    //      }
-		    GetAllAttendances();
+		    
             InitializeComponent ();
-		    BindingContext = this;
+		    //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
+		    //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.DeepSkyBlue;
+		    GetAllAttendances();
+            BindingContext = this;
 		}
+	    protected override void OnAppearing()
+	    {
+	        base.OnAppearing();
+	        ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
+	        ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.DeepSkyBlue;
 
-	    private void DeleteClicked(object sender, EventArgs e)
+	    }
+
+        private void DeleteClicked(object sender, EventArgs e)
 	    {
 	        throw new NotImplementedException();
 	    }

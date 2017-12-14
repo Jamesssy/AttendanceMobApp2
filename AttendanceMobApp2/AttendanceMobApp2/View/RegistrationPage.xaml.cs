@@ -18,15 +18,25 @@ namespace AttendanceMobApp2.View
 		public RegistrationPage ()
 		{
 			InitializeComponent ();
+		    
             rpvm = new RegistrationPageViewModel();
 		    BindingContext = rpvm;
             LoadRegCode();
-		}
+           
+        }
+
+	    protected override void OnAppearing()
+	    {
+	        base.OnAppearing();
+	        ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
+	        ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.DeepSkyBlue;
+
+        }
 
 	    private void Button_OnClickedAddRegistration(object sender, EventArgs e)
 	    {
 	        rpvm.AddToRegistrationString();
-	        Navigation.PushAsync(new MainPage());
+	        Application.Current.MainPage = new NavigationPage(new MainPage());
 	    }
 
 	    public void LoadRegCode()

@@ -7,7 +7,7 @@
 
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout Padding="20">
+            <StackLayout Padding="0,10,0,0">
             <!--<Slider x:Name="mySlider" Minimum="0" Maximum="100"></Slider>
             <Label FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"
                    BindingContext="{x:Reference mySlider}"
@@ -25,7 +25,8 @@
                 Source="icon1.png"
                 Aspect="AspectFill"
                 WidthRequest="150"
-                HeightRequest="150"></Image>
+                HeightRequest="150"
+                Margin="0,20,0,0"></Image>
             
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Label 
@@ -56,13 +57,13 @@
                     
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <!--<Label 
                     
@@ -78,7 +79,7 @@
                     Text="{Binding CheckedInString}" 
                     HorizontalTextAlignment="Center"
                     Grid.Row="0" Grid.Column="0"
-                    Grid.RowSpan="2"
+                    
                     VerticalTextAlignment="Center"
                     Grid.ColumnSpan="3" />
                     
@@ -88,6 +89,7 @@
                        WidthRequest="60"
                        Grid.Row="2"
                        Grid.Column="1"
+                       Margin="0,20,0,0"
                         />
                 
                 
@@ -97,7 +99,8 @@
                     FontAttributes="Bold"
                     Grid.Row="4"
                     Grid.Column="0"
-                    Grid.ColumnSpan="3"/>
+                    Grid.ColumnSpan="3"
+                    Margin="0,30,0,0"/>
 
                 <Label 
                     Text="{Binding LastCheckedIn, StringFormat='{0:dddd, d MMMM yyyy}'}" 
@@ -140,12 +143,21 @@
 
 
             </ListView>-->
-
-            <Button Text="Check in" Clicked="Button_OnClickedCheckIn" Command="{Binding ChangeTextCheckInCommand}"></Button>
+                <!--<Label Text=" "></Label>
+                <Label Text=" "></Label>-->
+            <Button Text="Check in" Clicked="Button_OnClickedCheckIn" Command="{Binding ChangeTextCheckInCommand}"
+                    BackgroundColor="Black"
+                    TextColor="DeepSkyBlue"
+                    VerticalOptions="EndAndExpand"></Button>
             
-            <Button Text="Refresh check in" Clicked="Button_OnClickedCheckInRefresh"></Button>
+            <Button Text="Refresh check in" Clicked="Button_OnClickedCheckInRefresh"
+                    BackgroundColor="Black"
+                    TextColor="DeepSkyBlue"></Button>
             
-            <Button Text="Attendance History " Clicked="Button_OnClickedAttHistory"></Button>
+            <Button Text="Attendance History " Clicked="Button_OnClickedAttHistory"
+                    BackgroundColor="Black"
+                    TextColor="DeepSkyBlue"
+                    Margin="0,0,0,20"></Button>
             
         </StackLayout>
         </ScrollView>

@@ -23,12 +23,23 @@ namespace AttendanceMobApp2
 		public MainPage()
 		{
 			InitializeComponent();
+            //LoadRegCode();
+		    //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
+		    //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.DeepSkyBlue;
             vm = new MainPageViewModel();
 		    BindingContext = vm;
             
 		}
 
-	    private void Button_OnClickedAttHistory(object sender, EventArgs e)
+	    protected override void OnAppearing()
+	    {
+	        base.OnAppearing();
+	        ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
+	        ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.DeepSkyBlue;
+
+	    }
+
+        private void Button_OnClickedAttHistory(object sender, EventArgs e)
 	    {
 	        Navigation.PushAsync(new AttendanceHistory(), true);
 	    }
@@ -74,7 +85,23 @@ namespace AttendanceMobApp2
 	        }
 	    }
 
-	   
+	    public void LoadRegCode()
+	    {
+	        var repo = new RegistrationCodeRepository();
+	        var checkIfExist = repo.GetAll().First().RegistrationString;
+
+	        if (checkIfExist != null)
+	        {
+	            Navigation.PushAsync(new MainPage(), true);
+
+
+	        }
+	        else
+	        {
+	            Navigation.PushAsync(new RegistrationPage(), true);
+	        }
+
+	    }
 
 
     }

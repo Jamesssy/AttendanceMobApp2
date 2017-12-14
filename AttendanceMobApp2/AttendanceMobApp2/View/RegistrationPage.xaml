@@ -5,12 +5,13 @@
              x:Class="AttendanceMobApp2.View.RegistrationPage">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout Padding="20">
+        <StackLayout Padding="0,10,0,0">
             <Image
                 Source="icon1.png"
                 Aspect="AspectFill"
                 WidthRequest="150"
-                HeightRequest="150"></Image>
+                HeightRequest="150"
+                Margin="0,20,0,0"></Image>
             <Label Text="Welcome to KBry's Attendance App!"
                    FontAttributes="Bold"
                   
@@ -47,13 +48,17 @@
                    HorizontalOptions="CenterAndExpand" />
             <Entry Placeholder="Enter your registration code!"
                    x:Name="RegistrationCodeEntry"
-                   Text="{Binding RegistrationCode}">
+                   Text="{Binding RegistrationCode}"
+                   Margin="20,0,20,10">
                 <!--<Entry.Behaviors>
                 <service:ValidationBehaviorEntry/>
                 </Entry.Behaviors>--> 
                 </Entry>
             <Button Text="Register this device"
-                    Clicked="Button_OnClickedAddRegistration"></Button>
+                    Clicked="Button_OnClickedAddRegistration"
+                    BackgroundColor="Black"
+                    TextColor="DeepSkyBlue"
+                    Margin="0,0,0,20"></Button>
         </StackLayout>
         </ScrollView>
     </ContentPage.Content>
