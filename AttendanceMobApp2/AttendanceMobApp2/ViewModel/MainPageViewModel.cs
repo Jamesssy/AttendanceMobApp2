@@ -119,8 +119,9 @@ namespace AttendanceMobApp2.ViewModel
 
         public void CheckIfCheckedInImage()
         {
-            var date = Attendance.Attendances.Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
-
+            //var date = Attendance.Attendances.Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
+            var repo = new AttendanceRepository();
+            var date = repo.GetAll().Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
             if (date)
             {
 
@@ -132,7 +133,10 @@ namespace AttendanceMobApp2.ViewModel
 
         public void CheckIfCheckedInString()
         {
-            var date = Attendance.Attendances.Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
+            //var date = Attendance.Attendances.Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
+
+            var repo = new AttendanceRepository();
+            var date = repo.GetAll().Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
 
             if (date)
             {
@@ -155,6 +159,12 @@ namespace AttendanceMobApp2.ViewModel
             }
         }
 
+        //private void GetLastCheckInFromFile()
+        //{
+        //    var repo = new AttendanceRepository();
+        //    var date = repo.GetAll().LastOrDefault();
+        //}
+
         public DateTime TodaysDate
         {
             get
@@ -166,11 +176,12 @@ namespace AttendanceMobApp2.ViewModel
 
         public void CheckLastCheckedIn()
         {
-            var date = Attendance.Attendances.Select(x => x.AttendanceDate.Date).LastOrDefault();
+            //var date = Attendance.Attendances.Select(x => x.AttendanceDate.Date).LastOrDefault();
 
-            
+            var repo = new AttendanceRepository();
+            var date = repo.GetAll().Select(x => x.AttendanceDate.Date).LastOrDefault();
 
-                LastCheckedIn = date;
+            LastCheckedIn = date;
             
 
 
