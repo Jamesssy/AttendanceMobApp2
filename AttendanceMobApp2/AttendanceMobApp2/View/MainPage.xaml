@@ -6,6 +6,7 @@
 
 
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Padding="20">
             <!--<Slider x:Name="mySlider" Minimum="0" Maximum="100"></Slider>
             <Label FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"
@@ -145,7 +146,9 @@
             <Button Text="Refresh check in" Clicked="Button_OnClickedCheckInRefresh"></Button>
             
             <Button Text="Attendance History " Clicked="Button_OnClickedAttHistory"></Button>
+            
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
     
 

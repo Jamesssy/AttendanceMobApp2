@@ -40,9 +40,10 @@ namespace AttendanceMobApp2
 
 	    private void Button_OnClickedCheckIn(object sender, EventArgs e)
 	    {
-	        GetAllAttendancesToList();
+	        
 
             AddToAttendanceList();
+	        GetAllAttendancesToList();
             vm.CheckIfCheckedInString();
 	        vm.CheckIfCheckedInImage();
             vm.CheckLastCheckedIn();

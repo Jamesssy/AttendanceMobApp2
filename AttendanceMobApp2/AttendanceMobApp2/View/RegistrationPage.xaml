@@ -4,6 +4,7 @@
              xmlns:service="clr-namespace:AttendanceMobApp2.Service;assembly=AttendanceMobApp2"
              x:Class="AttendanceMobApp2.View.RegistrationPage">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Padding="20">
             <Image
                 Source="icon1.png"
@@ -14,7 +15,8 @@
                    FontAttributes="Bold"
                   
                    HorizontalOptions="CenterAndExpand" />
-            <Label Text=" "
+            
+            <!--<Label Text=" "
                    HorizontalOptions="CenterAndExpand" />
             
             <Label Text="This app will (should?) automatically register what"
@@ -31,7 +33,7 @@
             
             <Label Text="your dead and will clean your locker and make $$$"
                    HorizontalOptions="CenterAndExpand" 
-                   FontAttributes="Italic"/>
+                   FontAttributes="Italic"/>-->
             
             <Label Text="Enter your registration code sent via e-mail!"
                    VerticalOptions="EndAndExpand"
@@ -39,12 +41,11 @@
                    
                    HorizontalOptions="CenterAndExpand" />
             <Label Text="If you didn't get one... take the hint!"
-                   
                    HorizontalOptions="CenterAndExpand" />
+            
             <Label Text=" "
                    HorizontalOptions="CenterAndExpand" />
             <Entry Placeholder="Enter your registration code!"
-                   
                    x:Name="RegistrationCodeEntry"
                    Text="{Binding RegistrationCode}">
                 <!--<Entry.Behaviors>
@@ -54,6 +55,7 @@
             <Button Text="Register this device"
                     Clicked="Button_OnClickedAddRegistration"></Button>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
 

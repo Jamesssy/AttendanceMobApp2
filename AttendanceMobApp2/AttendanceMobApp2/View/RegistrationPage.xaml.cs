@@ -20,6 +20,7 @@ namespace AttendanceMobApp2.View
 			InitializeComponent ();
             rpvm = new RegistrationPageViewModel();
 		    BindingContext = rpvm;
+            LoadRegCode();
 		}
 
 	    private void Button_OnClickedAddRegistration(object sender, EventArgs e)
@@ -28,6 +29,19 @@ namespace AttendanceMobApp2.View
 	        Navigation.PushAsync(new MainPage());
 	    }
 
+	    public void LoadRegCode()
+	    {
+	        var repo = new RegistrationCodeRepository();
+	        var checkIfExist = repo.GetAll().First().RegistrationString;
+            
+	        if (checkIfExist != null)
+	        {
+	            Navigation.PushAsync(new MainPage());
+
+
+	        }
+
+	    }
 
 	   
 
