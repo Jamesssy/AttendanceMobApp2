@@ -6,7 +6,7 @@ using AttendanceMobApp2.Model;
 
 namespace AttendanceMobApp2.ViewModel
 {
-    class RegistrationPageViewModel
+    public class RegistrationPageViewModel
     {
         public string RegistrationCode { get; set; }
 

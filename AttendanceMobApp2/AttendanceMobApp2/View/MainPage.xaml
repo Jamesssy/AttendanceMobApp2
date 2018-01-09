@@ -64,7 +64,8 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
-                </Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
                 <!--<Label 
                     
                     Text="Hej" 
@@ -111,7 +112,7 @@
                     Grid.Row="5"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"/>
-                <Label 
+                <!--<Label 
                     Text="Dagens datum:" 
                     HorizontalTextAlignment="End"
                     FontAttributes="Bold"
@@ -121,20 +122,32 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="1"
                     
-                    />
+                    />-->
                 <Label 
                     
-                    Text="{Binding TodaysDate, StringFormat='{0:dddd, d MMMM yyyy}'}"
+                    Text="{Binding TodaysDate, StringFormat='Dagens datum: {0:dddd, d MMMM yyyy}'}"
                     FontAttributes="Bold"
                     VerticalTextAlignment="Center"
-                    HorizontalTextAlignment="Start"
+                    HorizontalTextAlignment="Center"
                     FontSize="15"
                     
                     Grid.Row="6"
-                    Grid.Column="1"
-                    Grid.ColumnSpan="2"/>
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"/>
 
-            </Grid>
+                    <Label 
+                    
+                        Text="{Binding CurrentPosition}"
+                        
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        FontSize="15"
+                        TextColor="LightGray"
+                        Grid.Row="7"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"/>
+
+                </Grid>
                                 <!--</StackLayout>
                             </ContentView>
                         </ViewCell>
