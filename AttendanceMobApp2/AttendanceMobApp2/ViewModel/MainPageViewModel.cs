@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using AttendanceMobApp2.Data;
 using AttendanceMobApp2.Model;
 using AttendanceMobApp2.View;
+using Newtonsoft.Json;
 using Plugin.Geolocator;
 using Xamarin.Forms;
 using Plugin.Geolocator.Abstractions;
@@ -18,6 +21,42 @@ namespace AttendanceMobApp2.ViewModel
 {
     public class MainPageViewModel : INotifyPropertyChanged
     {
+        private static HttpClient client;
+        private Student fetchedStudent;
+        public MainPageViewModel()
+        {
+            client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:64195/%22");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Add("Authorization", "9546482E-887A-4CAB-A403-AD9C326FFDA5");
+            string regCode = Application.Current.Properties["regCode"] as string;
+
+
+            fetchedStudent = GetStudentAsync(regCode).Result;
+
+            FirstName = fetchedStudent.FirstName;
+            LastName = fetchedStudent.LastName;
+            CheckIfCheckedInString();
+            CheckIfCheckedInImage();
+            CheckLastCheckedIn();
+
+        }
+
+        public async Task<Student> GetStudentAsync(string registrationCode)
+        {
+            Student registrationStudent = null;
+            HttpResponseMessage response = await client.GetAsync(registrationCode);
+            if (response.IsSuccessStatusCode)
+            {
+                registrationStudent = JsonConvert.DeserializeObject<Student>(await response.Content.ReadAsStringAsync());
+            }
+
+
+
+            return registrationStudent;
+        }
 
         public async Task<Position> GetCurrentLocation()
         {
@@ -79,15 +118,7 @@ namespace AttendanceMobApp2.ViewModel
         {
             return CrossGeolocator.Current.IsGeolocationAvailable;
         }
-        public MainPageViewModel()
-        {
-            FirstName = "James";
-            LastName = "Johansson";
-            CheckIfCheckedInString();
-            CheckIfCheckedInImage();
-            CheckLastCheckedIn();
-            
-        }
+
 
 
 
@@ -141,6 +172,17 @@ namespace AttendanceMobApp2.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
 
+        }
+
+        public void PostAttendence()
+        {
+            var attendance = new Attendance();
+            attendance.AttendanceDate = DateTime.Now;
+            attendance.Student = fetchedStudent;
+            var jsonObject = JsonConvert.SerializeObject(attendance);
+            var content = new StringContent(jsonObject.ToString(), Encoding.UTF8, "application/json");
+            var result = client.PostAsync($"api/attendance", content).Result;
+            result.EnsureSuccessStatusCode();
         }
         //private static int ids = 0;
 

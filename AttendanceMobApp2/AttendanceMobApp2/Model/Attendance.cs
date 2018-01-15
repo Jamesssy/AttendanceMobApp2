@@ -14,5 +14,7 @@ namespace AttendanceMobApp2.Model
         public string ImageSource { get; set; }
 
         public static List<Attendance> Attendances = new List<Attendance>();
+
+        public virtual Student Student { get; set; }
     }
 }

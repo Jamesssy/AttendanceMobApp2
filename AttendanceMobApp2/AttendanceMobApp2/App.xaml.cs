@@ -16,9 +16,18 @@ namespace AttendanceMobApp2
 		    
 
             InitializeComponent();
-		    
-			MainPage = new NavigationPage(new RegistrationPage());
-		}
+		    if (Application.Current.Properties.ContainsKey("regCode"))
+		    {
+		        string id = Application.Current.Properties["regCode"] as string;
+		        if(string.IsNullOrEmpty(id)) MainPage = new NavigationPage(new RegistrationPage());
+
+
+		        Application.Current.MainPage = new NavigationPage(new MainPage());
+            }
+
+		    MainPage = new NavigationPage(new RegistrationPage());
+
+        }
 
 		protected override void OnStart ()
 		{

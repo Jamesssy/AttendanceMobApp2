@@ -5,7 +5,7 @@ using AttendanceMobApp2.Model;
 
 namespace AttendanceMobApp2.Data
 {
-    public class RegistrationCodeRepository : GenericFileRepository<PersonRegistrationCode>
+    public class RegistrationCodeRepository : GenericFileRepository<Student>
     {
         public RegistrationCodeRepository() : base("RegCodeFile.json")
         {

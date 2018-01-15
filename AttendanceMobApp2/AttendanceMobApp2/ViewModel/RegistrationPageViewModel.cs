@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using AttendanceMobApp2.Data;
 using AttendanceMobApp2.Model;
+using Xamarin.Forms;
 
 namespace AttendanceMobApp2.ViewModel
 {
@@ -12,11 +13,12 @@ namespace AttendanceMobApp2.ViewModel
 
         public void AddToRegistrationString()
         {
-            PersonRegistrationCode regCode = new PersonRegistrationCode();
-            regCode.RegistrationString = RegistrationCode;
-            PersonRegistrationCode.Codes.Add(regCode);
-            var repo = new RegistrationCodeRepository();
-            repo.Save(regCode);
+            //Student regCode = new Student();
+            //regCode.RegistrationString = RegistrationCode;
+            //Student.Codes.Add(regCode);
+            Application.Current.Properties["regCode"] = RegistrationCode;
+            //var repo = new RegistrationCodeRepository();
+            //repo.Save(regCode);
 
 
         }

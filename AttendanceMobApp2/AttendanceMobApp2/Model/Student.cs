@@ -5,7 +5,7 @@ using AttendanceMobApp2.Data;
 
 namespace AttendanceMobApp2.Model
 {
-    public class PersonRegistrationCode : IEntity
+    public class Student : IEntity
     {
         public int Id { get; set; }
 
@@ -15,6 +15,6 @@ namespace AttendanceMobApp2.Model
 
         public string LastName { get; set; }
 
-        public static List<PersonRegistrationCode> Codes = new List<PersonRegistrationCode>();
+        public static List<Student> Codes = new List<Student>();
     }
 }

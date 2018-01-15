@@ -1,10 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:attendanceMobApp2="clr-namespace:AttendanceMobApp2;assembly=AttendanceMobApp2"
+             xmlns:view="clr-namespace:AttendanceMobApp2.View;assembly=AttendanceMobApp2"
              x:Class="AttendanceMobApp2.App">
 	<Application.Resources>
 
 		<!-- Application resource dictionary -->
-
-	</Application.Resources>
+	    <ResourceDictionary>
+            <Style TargetType="view:RegistrationPage">
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+	        <Style TargetType="attendanceMobApp2:MainPage">
+	            <Setter Property="BackgroundColor" Value="White" />
+	        </Style>
+	        <Style TargetType="view:AttendanceHistory">
+                <Setter Property="BackgroundColor" Value="White" />
+	        </Style>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

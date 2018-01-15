@@ -158,19 +158,48 @@
             </ListView>-->
                 <!--<Label Text=" "></Label>
                 <Label Text=" "></Label>-->
-            <Button Text="Check in" Clicked="Button_OnClickedCheckIn" Command="{Binding ChangeTextCheckInCommand}"
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="1" Text="Check in" Clicked="Button_OnClickedCheckIn" Command="{Binding ChangeTextCheckInCommand}"
+                    HeightRequest="70"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            BackgroundColor="Black"
+                            TextColor="DeepSkyBlue"
+                            VerticalOptions="EndAndExpand"></Button>
+
+                    <!--<Button Text="Refresh check in" Clicked="Button_OnClickedCheckInRefresh"
+                    BackgroundColor="Black"
+                    TextColor="DeepSkyBlue"></Button>-->
+
+                    <Button Grid.Row="3" Text="Attendance History " Clicked="Button_OnClickedAttHistory"
+                            BackgroundColor="Black"
+                            TextColor="DeepSkyBlue"
+                            Margin="0,0,0,20"></Button>
+                </Grid>
+                <!--<Button Text="Check in" Clicked="Button_OnClickedCheckIn" Command="{Binding ChangeTextCheckInCommand}"
+                    
                     BackgroundColor="Black"
                     TextColor="DeepSkyBlue"
                     VerticalOptions="EndAndExpand"></Button>
             
-            <Button Text="Refresh check in" Clicked="Button_OnClickedCheckInRefresh"
+            --><!--<Button Text="Refresh check in" Clicked="Button_OnClickedCheckInRefresh"
                     BackgroundColor="Black"
-                    TextColor="DeepSkyBlue"></Button>
+                    TextColor="DeepSkyBlue"></Button>--><!--
             
             <Button Text="Attendance History " Clicked="Button_OnClickedAttHistory"
                     BackgroundColor="Black"
                     TextColor="DeepSkyBlue"
-                    Margin="0,0,0,20"></Button>
+                    Margin="0,0,0,20"></Button>-->
             
         </StackLayout>
         </ScrollView>
