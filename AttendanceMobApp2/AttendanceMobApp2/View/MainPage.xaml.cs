@@ -87,7 +87,20 @@ namespace AttendanceMobApp2
 
 	    public void LoadRegCode()
 	    {
-	        var repo = new RegistrationCodeRepository();
+	        if (Application.Current.Properties.ContainsKey("regCode"))
+	        {
+	            string id = Application.Current.Properties["regCode"] as string;
+	            if (string.IsNullOrEmpty(id)) Navigation.PushAsync(new MainPage(), true);
+
+	            Navigation.PushAsync(new RegistrationPage(), true);
+                //Application.Current.MainPage = new NavigationPage(new MainPage());
+	        }
+
+
+
+
+
+            var repo = new RegistrationCodeRepository();
 	        var checkIfExist = repo.GetAll().First().RegistrationString;
 
 	        if (checkIfExist != null)

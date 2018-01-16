@@ -26,7 +26,7 @@ namespace AttendanceMobApp2.ViewModel
         public MainPageViewModel()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost:64195/%22");
+            //client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
@@ -36,8 +36,10 @@ namespace AttendanceMobApp2.ViewModel
 
             fetchedStudent = GetStudentAsync(regCode).Result;
 
-            FirstName = fetchedStudent.FirstName;
-            LastName = fetchedStudent.LastName;
+            //FirstName = fetchedStudent.FirstName;
+            //LastName = fetchedStudent.LastName;
+            FirstName = regCode;
+            LastName = "BÖG";
             CheckIfCheckedInString();
             CheckIfCheckedInImage();
             CheckLastCheckedIn();
@@ -47,6 +49,7 @@ namespace AttendanceMobApp2.ViewModel
         public async Task<Student> GetStudentAsync(string registrationCode)
         {
             Student registrationStudent = null;
+            client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net/api/GetStudentInfo");
             HttpResponseMessage response = await client.GetAsync(registrationCode);
             if (response.IsSuccessStatusCode)
             {
@@ -227,29 +230,29 @@ namespace AttendanceMobApp2.ViewModel
         public void CheckIfCheckedInImage()
         {
             //var date = Attendance.Attendances.Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
-            var repo = new AttendanceRepository();
-            var date = repo.GetAll().Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
-            if (date)
-            {
+            //var repo = new AttendanceRepository();
+            //var date = repo.GetAll().Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
+            //if (date)
+            //{
 
-                CheckedInImage = "ok4.jpg";
-            }
+            //    CheckedInImage = "ok4.jpg";
+            //}
 
-
+            CheckedInImage = "ok4.jpg";
         }
 
         public void CheckIfCheckedInString()
         {
             //var date = Attendance.Attendances.Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
 
-            var repo = new AttendanceRepository();
-            var date = repo.GetAll().Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
+            //var repo = new AttendanceRepository();
+            //var date = repo.GetAll().Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
 
-            if (date)
-            {
+            //if (date)
+            //{
 
-                CheckedInString = "Du har checkat in idag!";
-            }
+            //    CheckedInString = "Du har checkat in idag!";
+            //}
 
             
         }
@@ -284,11 +287,11 @@ namespace AttendanceMobApp2.ViewModel
         public void CheckLastCheckedIn()
         {
             //var date = Attendance.Attendances.Select(x => x.AttendanceDate.Date).LastOrDefault();
+            //TODO: Add api call
+            //var repo = new AttendanceRepository();
+            //var date = repo.GetAll().Select(x => x.AttendanceDate.Date).LastOrDefault();
 
-            var repo = new AttendanceRepository();
-            var date = repo.GetAll().Select(x => x.AttendanceDate.Date).LastOrDefault();
-
-            LastCheckedIn = date;
+            //LastCheckedIn = date;
             
 
 

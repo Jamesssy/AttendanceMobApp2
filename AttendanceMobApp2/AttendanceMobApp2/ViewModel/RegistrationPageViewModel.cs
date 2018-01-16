@@ -11,12 +11,13 @@ namespace AttendanceMobApp2.ViewModel
     {
         public string RegistrationCode { get; set; }
 
-        public void AddToRegistrationString()
+        public async void AddToRegistrationString()
         {
             //Student regCode = new Student();
             //regCode.RegistrationString = RegistrationCode;
             //Student.Codes.Add(regCode);
             Application.Current.Properties["regCode"] = RegistrationCode;
+            await Application.Current.SavePropertiesAsync();
             //var repo = new RegistrationCodeRepository();
             //repo.Save(regCode);
 

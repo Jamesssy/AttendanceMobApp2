@@ -21,7 +21,7 @@ namespace AttendanceMobApp2.View
 		    
             rpvm = new RegistrationPageViewModel();
 		    BindingContext = rpvm;
-            LoadRegCode();
+            //LoadRegCode();
            
         }
 
@@ -41,15 +41,25 @@ namespace AttendanceMobApp2.View
 
 	    public void LoadRegCode()
 	    {
-	        var repo = new RegistrationCodeRepository();
-	        var checkIfExist = repo.GetAll().First().RegistrationString;
-            
-	        if (checkIfExist != null)
+
+	        if (Application.Current.Properties.ContainsKey("regCode"))
 	        {
-	            Navigation.PushAsync(new MainPage());
+	            string id = Application.Current.Properties["regCode"] as string;
+	            if (string.IsNullOrEmpty(id)) Navigation.PushAsync(new MainPage());
 
-
+                //Navigation.PushAsync(new RegistrationPage(), true);
+	            //Application.Current.MainPage = new NavigationPage(new MainPage());
 	        }
+
+         //   var repo = new RegistrationCodeRepository();
+	        //var checkIfExist = repo.GetAll().First().RegistrationString;
+            
+	        //if (checkIfExist != null)
+	        //{
+	        //    Navigation.PushAsync(new MainPage());
+
+
+	        //}
 
 	    }
 

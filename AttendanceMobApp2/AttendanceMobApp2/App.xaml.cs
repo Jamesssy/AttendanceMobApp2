@@ -14,18 +14,25 @@ namespace AttendanceMobApp2
         public App ()
 		{
 		    
-
             InitializeComponent();
 		    if (Application.Current.Properties.ContainsKey("regCode"))
 		    {
 		        string id = Application.Current.Properties["regCode"] as string;
-		        if(string.IsNullOrEmpty(id)) MainPage = new NavigationPage(new RegistrationPage());
+		        //id = null;
+		        if (!string.IsNullOrEmpty(id) && id != "112233")
+		        {
+		            MainPage = new NavigationPage(new MainPage());
+                }
+		        else
+		        {
+		            MainPage = new NavigationPage(new RegistrationPage());
+		        }
 
-
-		        Application.Current.MainPage = new NavigationPage(new MainPage());
+		        
+                //MainPage = new NavigationPage(new MainPage());
             }
 
-		    MainPage = new NavigationPage(new RegistrationPage());
+		    //MainPage = new NavigationPage(new RegistrationPage());
 
         }
 
