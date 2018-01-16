@@ -27,12 +27,18 @@ namespace AttendanceMobApp2.Data
         {
             return LoadEntities();
         }
+        
 
         private IEnumerable<T> LoadEntities()
         {
-            var savedJson = DependencyService.Get<IFile>().LoadText(fileName);
-            var deserializedTrayItems = JsonConvert.DeserializeObject<IEnumerable<T>>(savedJson);
-            return deserializedTrayItems;
+            if (DependencyService.Get<IFile>().FileExists(fileName))
+            {
+                var savedJson = DependencyService.Get<IFile>().LoadText(fileName);
+                var deserializedTrayItems = JsonConvert.DeserializeObject<IEnumerable<T>>(savedJson);
+                return deserializedTrayItems;
+            }
+
+            return Enumerable.Empty<T>();
         }
 
         public void Save(T entity)

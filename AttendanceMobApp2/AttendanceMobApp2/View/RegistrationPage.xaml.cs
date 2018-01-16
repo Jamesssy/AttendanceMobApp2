@@ -22,7 +22,7 @@ namespace AttendanceMobApp2.View
             rpvm = new RegistrationPageViewModel();
 		    BindingContext = rpvm;
             LoadRegCode();
-           
+
         }
 
 	    protected override void OnAppearing()
