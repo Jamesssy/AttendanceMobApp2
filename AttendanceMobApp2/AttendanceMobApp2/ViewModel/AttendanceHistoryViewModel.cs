@@ -9,12 +9,12 @@ namespace AttendanceMobApp2.ViewModel
 {
     public class AttendanceHistoryViewModel
     {
-        public ObservableCollection<Attendance> HistoryOfAttendances { get; set; } = 
-            new ObservableCollection<Attendance>();
+        public ObservableCollection<DateTime> HistoryOfAttendances { get; set; } = 
+            new ObservableCollection<DateTime>();
 
         
 
-        public AttendanceHistoryViewModel()
+        public AttendanceHistoryViewModel(List<DateTime> attendancies)
         {
             //TODO: Write real fucking code.
             //var date = DateTime.Now.AddDays(-1);
@@ -23,11 +23,11 @@ namespace AttendanceMobApp2.ViewModel
             //attendance.ImageSource = "ok4.jpg";
             //HistoryOfAttendances.Add(attendance);
 
-            //foreach (var item in Attendance.Attendances)
-            //{
-            //    HistoryOfAttendances.Add(item);
-                
-            //}
+            foreach (var item in attendancies)
+            {
+                HistoryOfAttendances.Add(item);
+
+            }
 
             //for (int i = 0; i < 5; i++)
             //{
@@ -40,7 +40,7 @@ namespace AttendanceMobApp2.ViewModel
 
             //}
 
-           
+
         }
 
        

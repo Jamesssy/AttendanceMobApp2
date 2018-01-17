@@ -24,10 +24,11 @@ namespace AttendanceMobApp2.ViewModel
     {
         private static HttpClient client;
         private Student fetchedStudent;
+        public List<DateTime> last10Attendances;
         public MainPageViewModel()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("http://10.0.2.2:59171");
+            client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
@@ -36,37 +37,102 @@ namespace AttendanceMobApp2.ViewModel
             var host = Dns.GetHostName();
             string ip = Dns.GetHostByName(host).AddressList[0].ToString();
 
-            fetchedStudent = GetStudentAsync(regCode).Result;
+            //fetchedStudent = GetStudentAsync(regCode).Result;
+            fetchedStudent = GetStudentAsync("445566").Result;
+            //last10Attendances = GetAttendenceDatesByAmountAsync(regCode, 10).Result;
+            last10Attendances = GetAttendenceDatesByAmountAsync("445566", 10).Result;
 
             //FirstName = fetchedStudent.FirstName;
             //LastName = fetchedStudent.LastName;
-            FirstName = regCode;
+            FirstName = fetchedStudent.FirstName;
             LastName = fetchedStudent.LastName ?? "Funkar inte";
             CheckIfCheckedInString();
             CheckIfCheckedInImage();
             CheckLastCheckedIn();
+            CheckIfSignedIn();
 
+        }
+
+        public void CheckIfSignedIn()
+        {
+            var todaysDate = DateTime.Now.AddHours(1);
+
+            if (last10Attendances.Any(x => x.Date == todaysDate.Date))
+            {
+                checkedInString = "Du har checkat in idag!";
+                CheckedInImage = "ok4.jpg";                
+            }
+
+            if (last10Attendances.Count > 0)
+            {
+                LastCheckedIn = SortDescending(last10Attendances).FirstOrDefault();
+            }
+            
+        }
+        static List<DateTime> SortDescending(List<DateTime> list)
+        {
+            list.Sort((a, b) => b.CompareTo(a));
+            return list;
         }
 
         public static async Task<Student> GetStudentAsync(string registrationCode)
         {
-            if (CheckForInternetConnection())
+            try
             {
-                Student registrationStudent = null;
-                //client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net");
-                HttpResponseMessage response = await client.GetAsync($"/api/GetStudentInfo/{registrationCode}");
-                if (response.IsSuccessStatusCode)
-                {
-                    registrationStudent = JsonConvert.DeserializeObject<Student>(await response.Content.ReadAsStringAsync());
-                }
+                string url = $"/api/GetStudentInfo/{registrationCode}";
+                var response = await client.GetAsync(url).ConfigureAwait(false);
+                response.EnsureSuccessStatusCode();
+                var responseContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                return JsonConvert.DeserializeObject<Student>(responseContent);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+            
+        }
 
-
-
-                return registrationStudent;
+        public static async Task<List<DateTime>> GetAttendenceDatesByAmountAsync(string registrationCode,int amount)
+        {
+            try
+            {
+                string url = $"/api/GetAttendenceDatesByAmount/{registrationCode}/{amount}";
+                var response = await client.GetAsync(url).ConfigureAwait(false);
+                response.EnsureSuccessStatusCode();
+                var responseContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                return JsonConvert.DeserializeObject<List<DateTime>>(responseContent);
+            }
+            catch (Exception e)
+            {
+                return null;
             }
 
-            return null;
         }
+
+        public async Task<Attendance> PostAttendanceAsync(Attendance attendance)
+        {
+            var serilizedAtten = JsonConvert.SerializeObject(attendance);
+
+            Attendance attendanceResponse = null;
+            var uri = $"/api/PostAttendance";
+            var content = new StringContent(serilizedAtten, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(
+                uri, content).ConfigureAwait(false); 
+            if (response.IsSuccessStatusCode)
+            {
+                var responseString = await response.Content.ReadAsStringAsync().ConfigureAwait(false); ;
+                attendanceResponse = JsonConvert.DeserializeObject<Attendance>(responseString);
+            }
+
+            if (!response.IsSuccessStatusCode)
+            {
+                //TODO Notify that you are not close
+            }
+
+            return attendanceResponse;
+        }
+
+
 
 
         public static bool CheckForInternetConnection()
@@ -95,7 +161,7 @@ namespace AttendanceMobApp2.ViewModel
                 var locator = CrossGeolocator.Current;
                 locator.DesiredAccuracy = 100;
 
-                position = await locator.GetLastKnownLocationAsync();
+                position = await locator.GetLastKnownLocationAsync().ConfigureAwait(false);
 
                 //if (position != null)
                 //{
@@ -108,8 +174,9 @@ namespace AttendanceMobApp2.ViewModel
                     //not available or enabled
                     return position;
                 }
-
-                position = await locator.GetPositionAsync(TimeSpan.FromSeconds(20), null, true);
+                Position = position;
+                var test = await locator.GetPositionAsync(TimeSpan.FromSeconds(20), null, true).ConfigureAwait(false);
+                var test2 = test;
 
             }
             catch (Exception ex)
@@ -125,10 +192,16 @@ namespace AttendanceMobApp2.ViewModel
                 position.Altitude, position.AltitudeAccuracy, position.Accuracy, position.Heading, position.Speed);
             Debug.WriteLine(output);
             CurrentPosition = $"Lat: {position.Latitude} - Long: {position.Longitude}";
+            Position = position;
             return position;
 
         }
-        
+
+
+        public Position Position { get; set; }
+
+        public Student Student => fetchedStudent;
+
 
         //private Position position;
         private string currentPosition;
@@ -203,16 +276,16 @@ namespace AttendanceMobApp2.ViewModel
 
         }
 
-        public void PostAttendence()
-        {
-            var attendance = new Attendance();
-            attendance.Date = DateTime.Now;
-            attendance.Student = fetchedStudent;
-            var jsonObject = JsonConvert.SerializeObject(attendance);
-            var content = new StringContent(jsonObject.ToString(), Encoding.UTF8, "application/json");
-            var result = client.PostAsync($"api/attendance", content).Result;
-            result.EnsureSuccessStatusCode();
-        }
+        //public void PostAttendence()
+        //{
+        //    var attendance = new Attendance();
+        //    attendance.Date = DateTime.Now;
+        //    attendance.Student = fetchedStudent;
+        //    var jsonObject = JsonConvert.SerializeObject(attendance);
+        //    var content = new StringContent(jsonObject.ToString(), Encoding.UTF8, "application/json");
+        //    var result = client.PostAsync($"api/attendance", content).Result;
+        //    result.EnsureSuccessStatusCode();
+        //}
         //private static int ids = 0;
 
         //public void AddToAttendance()
@@ -264,23 +337,14 @@ namespace AttendanceMobApp2.ViewModel
             //    CheckedInImage = "ok4.jpg";
             //}
 
-            CheckedInImage = "ok4.jpg";
+            
         }
 
         public void CheckIfCheckedInString()
         {
-            //var date = Attendance.Attendances.Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
 
-            //var repo = new AttendanceRepository();
-            //var date = repo.GetAll().Select(x => x.AttendanceDate.Date == DateTime.Now.Date).FirstOrDefault();
 
-            //if (date)
-            //{
 
-            //    CheckedInString = "Du har checkat in idag!";
-            //}
-
-            
         }
 
         private DateTime lastCheckedIn;

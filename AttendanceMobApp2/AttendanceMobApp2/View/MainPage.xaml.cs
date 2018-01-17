@@ -8,6 +8,7 @@ using AttendanceMobApp2.Data;
 using AttendanceMobApp2.Model;
 using AttendanceMobApp2.View;
 using AttendanceMobApp2.ViewModel;
+using Plugin.Geolocator.Abstractions;
 using Xamarin.Forms;
 
 namespace AttendanceMobApp2
@@ -41,7 +42,7 @@ namespace AttendanceMobApp2
 
         private void Button_OnClickedAttHistory(object sender, EventArgs e)
 	    {
-	        Navigation.PushAsync(new AttendanceHistory(), true);
+	        Navigation.PushAsync(new AttendanceHistory(vm.last10Attendances), true);
 	    }
 
 	    private void Button_OnClickedCheckInRefresh(object sender, EventArgs e)
@@ -54,13 +55,34 @@ namespace AttendanceMobApp2
 	        vm.GetCurrentLocation();
             AddToAttendanceList();
 	        GetAllAttendancesToList();
-            vm.CheckIfCheckedInString();
-	        vm.CheckIfCheckedInImage();
-            vm.CheckLastCheckedIn();
             
-	        //Navigation.PushAsync(new MainPage());
 
-	    }
+	        var student = vm.Student;
+	        if (student != null)
+	        {
+	            //var notEnoughTimeIdontCareAnymore = vm.GetCurrentLocation().ConfigureAwait(false);
+	            var pos = vm.Position;
+
+                var attendence = new Attendance()
+	            {
+	                Date = DateTime.Now.AddHours(1),
+	                Latitude = pos.Latitude,
+	                Longitude = pos.Longitude,
+	                Student = student
+	            };
+	            var test = vm.PostAttendanceAsync(attendence);
+	        }
+
+	        vm.CheckIfCheckedInString();
+	        vm.CheckIfCheckedInImage();
+	        vm.CheckLastCheckedIn();
+
+            vm.CheckIfSignedIn();
+
+
+            Navigation.PushAsync(new MainPage());
+
+        }
         public void AddToAttendanceList()
         {
 

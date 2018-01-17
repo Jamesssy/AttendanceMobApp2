@@ -15,9 +15,9 @@ namespace AttendanceMobApp2.View
 	public partial class RegistrationPage : ContentPage
 	{
 	    private RegistrationPageViewModel rpvm;
-		public RegistrationPage ()
+		public RegistrationPage()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		    
             rpvm = new RegistrationPageViewModel();
 		    BindingContext = rpvm;
