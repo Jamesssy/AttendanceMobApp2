@@ -77,12 +77,12 @@ namespace AttendanceMobApp2
 
 	    public void GetAllAttendancesToList()
 	    {
-	        var repo = new AttendanceRepository();
-	        var Attendances = repo.GetAll();
-	        foreach (var attendance in Attendances)
-	        {
-	            attendances.Add(attendance);
-	        }
+	        //var repo = new AttendanceRepository();
+	        //var Attendances = repo.GetAll();
+	        //foreach (var attendance in Attendances)
+	        //{
+	        //    attendances.Add(attendance);
+	        //}
 	    }
 
 	    public void LoadRegCode()
@@ -100,19 +100,19 @@ namespace AttendanceMobApp2
 
 
 
-            var repo = new RegistrationCodeRepository();
-	        var checkIfExist = repo.GetAll().First().RegistrationCode;
+         //   var repo = new RegistrationCodeRepository();
+	        //var checkIfExist = repo.GetAll().First().RegistrationCode;
 
-	        if (checkIfExist != null)
-	        {
-	            Navigation.PushAsync(new MainPage(), true);
+	        //if (checkIfExist != null)
+	        //{
+	        //    Navigation.PushAsync(new MainPage(), true);
 
 
-	        }
-	        else
-	        {
-	            Navigation.PushAsync(new RegistrationPage(), true);
-	        }
+	        //}
+	        //else
+	        //{
+	        //    Navigation.PushAsync(new RegistrationPage(), true);
+	        //}
 
 	    }
 

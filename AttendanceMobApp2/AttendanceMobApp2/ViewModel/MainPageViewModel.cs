@@ -50,20 +50,20 @@ namespace AttendanceMobApp2.ViewModel
 
         public static async Task<Student> GetStudentAsync(string registrationCode)
         {
-            if (CheckForInternetConnection())
-            {
-                Student registrationStudent = null;
-                //client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net");
-                HttpResponseMessage response = await client.GetAsync($"/api/GetStudentInfo/{registrationCode}");
-                if (response.IsSuccessStatusCode)
-                {
-                    registrationStudent = JsonConvert.DeserializeObject<Student>(await response.Content.ReadAsStringAsync());
-                }
+            //if (CheckForInternetConnection())
+            //{
+            //    Student registrationStudent = null;
+            //    //client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net");
+            //    HttpResponseMessage response = await client.GetAsync($"/api/GetStudentInfo/{registrationCode}");
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        registrationStudent = JsonConvert.DeserializeObject<Student>(await response.Content.ReadAsStringAsync());
+            //    }
 
 
 
-                return registrationStudent;
-            }
+            //    return registrationStudent;
+            //}
 
             return null;
         }
