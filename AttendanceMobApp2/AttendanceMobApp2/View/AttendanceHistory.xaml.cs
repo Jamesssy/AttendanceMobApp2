@@ -15,22 +15,26 @@ namespace AttendanceMobApp2.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AttendanceHistory : ContentPage
 	{
-	    public ObservableCollection<DateTime> HistoryOfAttendances { get; set; } =
-	        new ObservableCollection<DateTime>();
-
+	    //public ObservableCollection<DateTime> HistoryOfAttendances { get; set; } =
+	    //    new ObservableCollection<DateTime>();
+	    private AttendanceHistoryViewModel vm;
         public AttendanceHistory(List<DateTime> attendancies)
 		{
-            foreach (var item in attendancies)
-            {
-                HistoryOfAttendances.Add(item);
-            }
+            //foreach (var item in attendancies)
+            //{
+            //    HistoryOfAttendances.Add(item);
+            //}
 
             InitializeComponent();
-		    //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
-		    //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.DeepSkyBlue;
-		    //GetAllAttendances();
-            BindingContext = this;
-		}
+            //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
+            //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.DeepSkyBlue;
+            //GetAllAttendances();
+
+            //BindingContext = this;
+
+		    vm = new AttendanceHistoryViewModel(attendancies);
+		    BindingContext = vm;
+        }
 	    protected override void OnAppearing()
 	    {
 	        base.OnAppearing();

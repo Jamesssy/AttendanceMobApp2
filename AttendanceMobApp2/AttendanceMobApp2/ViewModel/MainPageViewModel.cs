@@ -83,7 +83,11 @@ namespace AttendanceMobApp2.ViewModel
                 var response = await client.GetAsync(url).ConfigureAwait(false);
                 response.EnsureSuccessStatusCode();
                 var responseContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                
+               
                 return JsonConvert.DeserializeObject<Student>(responseContent);
+
+                
             }
             catch (Exception e)
             {
