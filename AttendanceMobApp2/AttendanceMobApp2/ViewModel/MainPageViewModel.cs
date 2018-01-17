@@ -27,7 +27,7 @@ namespace AttendanceMobApp2.ViewModel
         public MainPageViewModel()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net");
+            client.BaseAddress = new Uri("http://10.0.2.2:59171");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
@@ -41,7 +41,7 @@ namespace AttendanceMobApp2.ViewModel
             //FirstName = fetchedStudent.FirstName;
             //LastName = fetchedStudent.LastName;
             FirstName = regCode;
-            LastName = "BÖG";
+            LastName = fetchedStudent.LastName ?? "Funkar inte";
             CheckIfCheckedInString();
             CheckIfCheckedInImage();
             CheckLastCheckedIn();
@@ -50,20 +50,20 @@ namespace AttendanceMobApp2.ViewModel
 
         public static async Task<Student> GetStudentAsync(string registrationCode)
         {
-            //if (CheckForInternetConnection())
-            //{
-            //    Student registrationStudent = null;
-            //    //client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net");
-            //    HttpResponseMessage response = await client.GetAsync($"/api/GetStudentInfo/{registrationCode}");
-            //    if (response.IsSuccessStatusCode)
-            //    {
-            //        registrationStudent = JsonConvert.DeserializeObject<Student>(await response.Content.ReadAsStringAsync());
-            //    }
+            if (CheckForInternetConnection())
+            {
+                Student registrationStudent = null;
+                //client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net");
+                HttpResponseMessage response = await client.GetAsync($"/api/GetStudentInfo/{registrationCode}");
+                if (response.IsSuccessStatusCode)
+                {
+                    registrationStudent = JsonConvert.DeserializeObject<Student>(await response.Content.ReadAsStringAsync());
+                }
 
 
 
-            //    return registrationStudent;
-            //}
+                return registrationStudent;
+            }
 
             return null;
         }
