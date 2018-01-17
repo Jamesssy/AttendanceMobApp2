@@ -15,15 +15,16 @@ namespace AttendanceMobApp2.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AttendanceHistory : ContentPage
 	{
-	    public ObservableCollection<DateTime> HistoryOfAttendances { get; set; } =
-	        new ObservableCollection<DateTime>();
+	    public ObservableCollection<AttendanceListItem> HistoryOfAttendances { get; set; } =
+	        new ObservableCollection<AttendanceListItem>();
 
         public AttendanceHistory(List<DateTime> attendancies)
 		{
-            foreach (var item in attendancies)
-            {
-                HistoryOfAttendances.Add(item);
-            }
+		    foreach (var item in attendancies)
+		    {
+		        HistoryOfAttendances.Add(new AttendanceListItem() { Date = item, ImageSource = "ok4.jpg" });
+
+		    }
 
             InitializeComponent();
 		    //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;

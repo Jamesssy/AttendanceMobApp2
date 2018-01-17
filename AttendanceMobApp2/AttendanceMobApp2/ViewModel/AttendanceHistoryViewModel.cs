@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using AttendanceMobApp2.Model;
+using Xamarin.Forms;
 
 namespace AttendanceMobApp2.ViewModel
 {
     public class AttendanceHistoryViewModel
     {
-        public ObservableCollection<DateTime> HistoryOfAttendances { get; set; } = 
-            new ObservableCollection<DateTime>();
+        public ObservableCollection<AttendanceListItem> HistoryOfAttendances { get; set; } = 
+            new ObservableCollection<AttendanceListItem>();
 
         
 
@@ -25,7 +26,7 @@ namespace AttendanceMobApp2.ViewModel
 
             foreach (var item in attendancies)
             {
-                HistoryOfAttendances.Add(item);
+                HistoryOfAttendances.Add(new AttendanceListItem(){Date = item, ImageSource = "ok4.jpg" });
 
             }
 
@@ -44,5 +45,11 @@ namespace AttendanceMobApp2.ViewModel
         }
 
        
+    }
+
+    public class AttendanceListItem
+    {
+        public ImageSource ImageSource { get; set; }
+        public DateTime Date { get; set; }
     }
 }

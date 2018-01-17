@@ -60,7 +60,8 @@ namespace AttendanceMobApp2.ViewModel
             if (last10Attendances.Any(x => x.Date == todaysDate.Date))
             {
                 checkedInString = "Du har checkat in idag!";
-                CheckedInImage = "ok4.jpg";                
+                CheckedInImage = "ok4.jpg";
+                CheckedInToday = false;
             }
 
             if (last10Attendances.Count > 0)
@@ -74,6 +75,20 @@ namespace AttendanceMobApp2.ViewModel
             list.Sort((a, b) => b.CompareTo(a));
             return list;
         }
+
+
+        private bool checkedInToday;
+
+        public bool CheckedInToday
+        {
+            get { return checkedInToday; }
+            set
+            {
+                checkedInToday = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public static async Task<Student> GetStudentAsync(string registrationCode)
         {
