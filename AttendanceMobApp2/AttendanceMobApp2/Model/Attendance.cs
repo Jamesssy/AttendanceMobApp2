@@ -8,13 +8,9 @@ namespace AttendanceMobApp2.Model
     public class Attendance : IEntity
     {
         public int Id { get; set; }
-
-        public DateTime AttendanceDate { get; set; }
-
-        public string ImageSource { get; set; }
-
-        public static List<Attendance> Attendances = new List<Attendance>();
-
-        public virtual Student Student { get; set; }
+        public float Longitude { get; set; }
+        public float Latitude { get; set; }
+        public DateTime Date { get; set; }
+        public Student Student { get; set; }
     }
 }

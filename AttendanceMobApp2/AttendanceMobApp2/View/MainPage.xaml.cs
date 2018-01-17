@@ -64,14 +64,14 @@ namespace AttendanceMobApp2
         public void AddToAttendanceList()
         {
 
-            Attendance attendance = new Attendance();
-            attendance.AttendanceDate = DateTime.Now;
-            attendance.ImageSource = "ok4.jpg";
+            //Attendance attendance = new Attendance();
+            //attendance.AttendanceDate = DateTime.Now;
+            //attendance.ImageSource = "ok4.jpg";
             //attendance.Id = ids++;
-            Attendance.Attendances.Add(attendance);
-            attendances.Add(attendance);
-            var repo = new AttendanceRepository();
-            repo.Save(attendances);
+            //Attendance.Attendances.Add(attendance);
+            //attendances.Add(attendance);
+            //var repo = new AttendanceRepository();
+            //repo.Save(attendances);
 
         }
 
@@ -101,7 +101,7 @@ namespace AttendanceMobApp2
 
 
             var repo = new RegistrationCodeRepository();
-	        var checkIfExist = repo.GetAll().First().RegistrationString;
+	        var checkIfExist = repo.GetAll().First().RegistrationCode;
 
 	        if (checkIfExist != null)
 	        {

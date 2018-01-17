@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
@@ -26,13 +27,14 @@ namespace AttendanceMobApp2.ViewModel
         public MainPageViewModel()
         {
             client = new HttpClient();
-            //client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net/");
+            client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("Authorization", "9546482E-887A-4CAB-A403-AD9C326FFDA5");
             string regCode = Application.Current.Properties["regCode"] as string;
-
+            var host = Dns.GetHostName();
+            string ip = Dns.GetHostByName(host).AddressList[0].ToString();
 
             fetchedStudent = GetStudentAsync(regCode).Result;
 
@@ -46,19 +48,43 @@ namespace AttendanceMobApp2.ViewModel
 
         }
 
-        public async Task<Student> GetStudentAsync(string registrationCode)
+        public static async Task<Student> GetStudentAsync(string registrationCode)
         {
-            Student registrationStudent = null;
-            client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net/api/GetStudentInfo");
-            HttpResponseMessage response = await client.GetAsync(registrationCode);
-            if (response.IsSuccessStatusCode)
+            if (CheckForInternetConnection())
             {
-                registrationStudent = JsonConvert.DeserializeObject<Student>(await response.Content.ReadAsStringAsync());
+                Student registrationStudent = null;
+                //client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net");
+                HttpResponseMessage response = await client.GetAsync($"/api/GetStudentInfo/{registrationCode}");
+                if (response.IsSuccessStatusCode)
+                {
+                    registrationStudent = JsonConvert.DeserializeObject<Student>(await response.Content.ReadAsStringAsync());
+                }
+
+
+
+                return registrationStudent;
             }
 
+            return null;
+        }
 
 
-            return registrationStudent;
+        public static bool CheckForInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                {
+                    using (client.OpenRead("http://clients3.google.com/generate_204"))
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public async Task<Position> GetCurrentLocation()
@@ -180,7 +206,7 @@ namespace AttendanceMobApp2.ViewModel
         public void PostAttendence()
         {
             var attendance = new Attendance();
-            attendance.AttendanceDate = DateTime.Now;
+            attendance.Date = DateTime.Now;
             attendance.Student = fetchedStudent;
             var jsonObject = JsonConvert.SerializeObject(attendance);
             var content = new StringContent(jsonObject.ToString(), Encoding.UTF8, "application/json");

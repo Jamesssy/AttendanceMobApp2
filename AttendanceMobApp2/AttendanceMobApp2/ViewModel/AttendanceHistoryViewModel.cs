@@ -16,17 +16,18 @@ namespace AttendanceMobApp2.ViewModel
 
         public AttendanceHistoryViewModel()
         {
-            var date = DateTime.Now.AddDays(-1);
-            Attendance attendance = new Attendance();
-            attendance.AttendanceDate = date;
-            attendance.ImageSource = "ok4.jpg";
-            HistoryOfAttendances.Add(attendance);
+            //TODO: Write real fucking code.
+            //var date = DateTime.Now.AddDays(-1);
+            //Attendance attendance = new Attendance();
+            //attendance.AttendanceDate = date;
+            //attendance.ImageSource = "ok4.jpg";
+            //HistoryOfAttendances.Add(attendance);
 
-            foreach (var item in Attendance.Attendances)
-            {
-                HistoryOfAttendances.Add(item);
+            //foreach (var item in Attendance.Attendances)
+            //{
+            //    HistoryOfAttendances.Add(item);
                 
-            }
+            //}
 
             //for (int i = 0; i < 5; i++)
             //{

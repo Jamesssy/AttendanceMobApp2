@@ -21,10 +21,6 @@ namespace AttendanceMobApp2.Api
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("Authorization", "9546482E-887A-4CAB-A403-AD9C326FFDA5");
-            Attendance newAttendance = new Attendance
-            {
-                AttendanceDate = DateTime.Now
-            };
 
         }
         static async Task<Student> GetStudent(string registrationCode)

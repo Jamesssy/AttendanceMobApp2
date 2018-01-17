@@ -52,7 +52,7 @@ namespace AttendanceMobApp2.View
 	        }
 
             Attendance attendance = e.SelectedItem as Attendance;
-	        DisplayAlert("Selected", attendance.AttendanceDate.ToString() , "OK");
+	        //DisplayAlert("Selected", attendance.AttendanceDate.ToString() , "OK");
 
 	    }
 

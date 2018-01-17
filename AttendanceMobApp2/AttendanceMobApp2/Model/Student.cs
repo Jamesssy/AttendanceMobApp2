@@ -8,13 +8,11 @@ namespace AttendanceMobApp2.Model
     public class Student : IEntity
     {
         public int Id { get; set; }
-
-        public string RegistrationString { get; set; }
-
+        public string RegistrationCode { get; set; }
         public string FirstName { get; set; }
-
         public string LastName { get; set; }
-
-        public static List<Student> Codes = new List<Student>();
+        public string Email { get; set; }
+        public Schoolclass SchoolClass { get; set; }
+        public Attendance[] Attendances { get; set; }
     }
 }
