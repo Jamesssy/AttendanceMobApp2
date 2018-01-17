@@ -53,6 +53,18 @@ namespace AttendanceMobApp2.ViewModel
 
         }
 
+        private bool checkedIn = true;
+
+        public bool CheckedIn
+        {
+            get { return checkedIn; }
+            set
+            {
+                checkedIn = value;
+                OnPropertyChanged();
+            }
+        }
+
         public void CheckIfSignedIn()
         {
             var todaysDate = DateTime.Now.AddHours(1);
@@ -60,7 +72,8 @@ namespace AttendanceMobApp2.ViewModel
             if (last10Attendances.Any(x => x.Date == todaysDate.Date))
             {
                 checkedInString = "Du har checkat in idag!";
-                CheckedInImage = "ok4.jpg";                
+                CheckedInImage = "ok4.jpg";
+                CheckedIn = false;
             }
 
             if (last10Attendances.Count > 0)
