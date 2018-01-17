@@ -70,8 +70,8 @@
                         </ViewCell>-->
 
 
-                        <ImageCell Text="{Binding AttendanceDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}"
-                                   Detail="{Binding AttendanceDate, StringFormat='{0:dddd}'}"
+                        <ImageCell Text="{Binding Date, StringFormat='{0:MMMM d, yyyy HH:mm}'}"
+                                   Detail="{Binding Date, StringFormat='{0:dddd}'}"
                              ImageSource="{Binding ImageSource}"  
                                    TextColor="DeepSkyBlue"
                                    DetailColor="Gray"></ImageCell>
