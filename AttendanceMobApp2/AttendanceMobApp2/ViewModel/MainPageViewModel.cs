@@ -36,7 +36,7 @@ namespace AttendanceMobApp2.ViewModel
             string regCode = Application.Current.Properties["regCode"] as string;
             var host = Dns.GetHostName();
             string ip = Dns.GetHostByName(host).AddressList[0].ToString();
-
+            CheckedInToday = true;
             //fetchedStudent = GetStudentAsync(regCode).Result;
             fetchedStudent = GetStudentAsync("445566").Result;
             //last10Attendances = GetAttendenceDatesByAmountAsync(regCode, 10).Result;
@@ -46,9 +46,7 @@ namespace AttendanceMobApp2.ViewModel
             //LastName = fetchedStudent.LastName;
             FirstName = fetchedStudent.FirstName;
             LastName = fetchedStudent.LastName ?? "Funkar inte";
-            CheckIfCheckedInString();
-            CheckIfCheckedInImage();
-            CheckLastCheckedIn();
+
             CheckIfSignedIn();
 
         }
