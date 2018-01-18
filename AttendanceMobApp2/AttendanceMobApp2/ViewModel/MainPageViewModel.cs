@@ -34,36 +34,51 @@ namespace AttendanceMobApp2.ViewModel
                 new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("Authorization", "9546482E-887A-4CAB-A403-AD9C326FFDA5");
             string regCode = Application.Current.Properties["regCode"] as string;
-            var host = Dns.GetHostName();
-            string ip = Dns.GetHostByName(host).AddressList[0].ToString();
-            CheckedInToday = true;
-            //fetchedStudent = GetStudentAsync(regCode).Result;
-            fetchedStudent = GetStudentAsync("445566").Result;
-            //last10Attendances = GetAttendenceDatesByAmountAsync(regCode, 10).Result;
-            last10Attendances = GetAttendenceDatesByAmountAsync("445566", 10).Result;
 
-            //FirstName = fetchedStudent.FirstName;
-            //LastName = fetchedStudent.LastName;
-            FirstName = fetchedStudent.FirstName;
-            LastName = fetchedStudent.LastName ?? "Funkar inte";
+            
 
-            CheckIfSignedIn();
+            fetchedStudent = GetStudentAsync(regCode).Result;
+            if (fetchedStudent == null)
+            {
+                ResetRegCode();
+                Application.Current.MainPage = new NavigationPage(new MainPage());
+            }
+            else
+            {
+                last10Attendances = GetAttendenceDatesByAmountAsync(regCode, 10).Result;
+                //last10Attendances = GetAttendenceDatesByAmountAsync("445566", 10).Result;
 
+                //FirstName = fetchedStudent.FirstName;
+                //LastName = fetchedStudent.LastName;
+                FirstName = fetchedStudent.FirstName ?? "Fel";
+                LastName = fetchedStudent.LastName ?? "Kod";
+
+                CheckIfSignedIn();
+            }
+
+
+        }
+
+        public async Task ResetRegCode()
+        {
+            Application.Current.Properties["regCode"] = null;
+            await Application.Current.SavePropertiesAsync().ConfigureAwait(false);
         }
 
         public void CheckIfSignedIn()
         {
+            CheckedInToday = true;
             var todaysDate = DateTime.Now.AddHours(1);
-
-            if (last10Attendances.Any(x => x.Date == todaysDate.Date))
-            {
-                checkedInString = "Du har checkat in idag!";
-                CheckedInImage = "ok4.jpg";
-                CheckedInToday = false;
-            }
-
             if (last10Attendances.Count > 0)
             {
+                if (last10Attendances.Any(x => x.Date == todaysDate.Date))
+                    {
+                        checkedInString = "Du har checkat in idag!";
+                        CheckedInImage = "ok4.jpg";
+                        CheckedInToday = false;
+                    }
+
+            
                 LastCheckedIn = SortDescending(last10Attendances).FirstOrDefault();
             }
             
