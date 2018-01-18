@@ -53,7 +53,7 @@ namespace AttendanceMobApp2.ViewModel
 
         }
 
-        private bool checkedIn = true;
+        private bool checkedIn;
 
         public bool CheckedIn
         {
@@ -80,7 +80,8 @@ namespace AttendanceMobApp2.ViewModel
             {
                 LastCheckedIn = SortDescending(last10Attendances).FirstOrDefault();
             }
-            
+            CheckedIn = true;
+
         }
         static List<DateTime> SortDescending(List<DateTime> list)
         {
