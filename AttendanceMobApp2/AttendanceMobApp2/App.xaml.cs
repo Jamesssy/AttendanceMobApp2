@@ -22,6 +22,7 @@ namespace AttendanceMobApp2
 		        if (!string.IsNullOrEmpty(id) && id != "112233")
 		        {
 		            MainPage = new NavigationPage(new MainPage());
+
                 }
 		        else
 		        {

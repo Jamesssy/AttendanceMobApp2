@@ -27,7 +27,8 @@ namespace AttendanceMobApp2
             //LoadRegCode();
 		    //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
 		    //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.DeepSkyBlue;
-            vm = new MainPageViewModel();
+            vm = new MainPageViewModel(Navigation);
+		    vm.Navigation = Navigation;
 		    BindingContext = vm;
             
 		}

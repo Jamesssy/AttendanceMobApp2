@@ -25,8 +25,9 @@ namespace AttendanceMobApp2.ViewModel
         private static HttpClient client;
         private Student fetchedStudent;
         public List<DateTime> last10Attendances;
-        public MainPageViewModel()
+        public MainPageViewModel(INavigation navigation)
         {
+            Navigation = navigation;
             client = new HttpClient();
             client.BaseAddress = new Uri("https://kbryapiservice.azurewebsites.net");
             client.DefaultRequestHeaders.Accept.Clear();
@@ -41,7 +42,7 @@ namespace AttendanceMobApp2.ViewModel
             if (fetchedStudent == null)
             {
                 ResetRegCode();
-                Application.Current.MainPage = new NavigationPage(new MainPage());
+                Navigation.PushAsync(new RegistrationPage(), true);
             }
             else
             {
@@ -59,10 +60,12 @@ namespace AttendanceMobApp2.ViewModel
 
         }
 
+        public INavigation Navigation { get; set; }
+
         public async Task ResetRegCode()
         {
             Application.Current.Properties["regCode"] = null;
-            await Application.Current.SavePropertiesAsync().ConfigureAwait(false);
+            await Application.Current.SavePropertiesAsync();
         }
 
         public void CheckIfSignedIn()
