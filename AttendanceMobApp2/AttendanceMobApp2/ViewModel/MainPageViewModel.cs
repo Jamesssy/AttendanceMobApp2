@@ -56,19 +56,22 @@ namespace AttendanceMobApp2.ViewModel
         public void CheckIfSignedIn()
         {
             var todaysDate = DateTime.Now.AddHours(1);
-
-            if (last10Attendances.Any(x => x.Date == todaysDate.Date))
-            {
-                checkedInString = "Du har checkat in idag!";
-                CheckedInImage = "ok4.jpg";
-                CheckedInToday = false;
-            }
-
+            CheckedInToday = true;
             if (last10Attendances.Count > 0)
             {
+                
+                if (last10Attendances.Any(x => x.Date == todaysDate.Date))
+                {
+                    checkedInString = "Du har checkat in idag!";
+                    CheckedInImage = "ok4.jpg";
+                    CheckedInToday = false;
+                }
+
+
                 LastCheckedIn = SortDescending(last10Attendances).FirstOrDefault();
             }
-            
+
+
         }
         static List<DateTime> SortDescending(List<DateTime> list)
         {
@@ -104,10 +107,10 @@ namespace AttendanceMobApp2.ViewModel
             {
                 return null;
             }
-            
+
         }
 
-        public static async Task<List<DateTime>> GetAttendenceDatesByAmountAsync(string registrationCode,int amount)
+        public static async Task<List<DateTime>> GetAttendenceDatesByAmountAsync(string registrationCode, int amount)
         {
             try
             {
@@ -132,7 +135,7 @@ namespace AttendanceMobApp2.ViewModel
             var uri = $"/api/PostAttendance";
             var content = new StringContent(serilizedAtten, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await client.PostAsync(
-                uri, content).ConfigureAwait(false); 
+                uri, content).ConfigureAwait(false);
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync().ConfigureAwait(false); ;
@@ -252,7 +255,7 @@ namespace AttendanceMobApp2.ViewModel
             get { return labelText; }
             set
             {
-                labelText = value; 
+                labelText = value;
                 OnPropertyChanged();
             }
         }
@@ -261,11 +264,14 @@ namespace AttendanceMobApp2.ViewModel
 
         public Command ChangeTextCommand
         {
-            get { return changeTextCommand ?? (changeTextCommand = new Command(() =>
+            get
             {
-                LabelText = "Goodbye";
-            })); }
-            
+                return changeTextCommand ?? (changeTextCommand = new Command(() =>
+          {
+              LabelText = "Goodbye";
+          }));
+            }
+
         }
 
 
@@ -280,7 +286,7 @@ namespace AttendanceMobApp2.ViewModel
         //public DateTime CheckedIn { get; set; }
         public string RegistrationCode { get; set; }
 
-        
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -311,7 +317,7 @@ namespace AttendanceMobApp2.ViewModel
         //    attendance.ImageSource = "ok4.jpg";
         //    //attendance.Id = ids++;
         //    Attendance.Attendances.Add(attendance);
-           
+
         //    var repo = new AttendanceRepository();
         //    repo.Save(attendance);
 
@@ -352,7 +358,7 @@ namespace AttendanceMobApp2.ViewModel
             //    CheckedInImage = "ok4.jpg";
             //}
 
-            
+
         }
 
         public void CheckIfCheckedInString()
@@ -386,7 +392,7 @@ namespace AttendanceMobApp2.ViewModel
             {
                 return DateTime.Now;
             }
-            
+
         }
 
         public void CheckLastCheckedIn()
@@ -397,7 +403,7 @@ namespace AttendanceMobApp2.ViewModel
             //var date = repo.GetAll().Select(x => x.AttendanceDate.Date).LastOrDefault();
 
             //LastCheckedIn = date;
-            
+
 
 
         }

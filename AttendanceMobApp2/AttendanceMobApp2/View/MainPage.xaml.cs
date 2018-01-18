@@ -65,8 +65,8 @@ namespace AttendanceMobApp2
 
                 var attendence = new Attendance()
 	            {
-	                Date = DateTime.Now.AddHours(1),
-	                Latitude = pos.Latitude,
+                    Date = DateTime.Now.AddHours(1),
+                    Latitude = pos.Latitude,
 	                Longitude = pos.Longitude,
 	                Student = student
 	            };
